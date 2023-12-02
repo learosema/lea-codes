@@ -1,0 +1,20 @@
+<nav id="topNav" class="top-nav" aria-labelledby="top-navigation">
+  <h2 id="top-navigation" class="visually-hidden">Top navigation</h2>
+  <ul role="list">
+    {% for item in navigation.top %}
+    <li>
+      <a
+        class="nav"
+        href="{{ item.url }}"
+        {{
+        helpers.getLinkActiveState(item.url,
+        page.url)
+        |
+        safe
+        }}
+        >{{ item.text }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

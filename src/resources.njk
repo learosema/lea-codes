@@ -1,0 +1,42 @@
+---
+title: Resources
+description: Various writes about various technologies
+layout: base
+eleventyExcludeFromCollections: true
+---
+<div class="intro">
+  <article class="flow wrapper">
+    <h1>Resources</h1>
+    <p>This page contains various write-ups by me about various technologies.</p>
+  </article>
+</div>
+
+<div class="content">
+
+  <article class="flow wrapper">
+    <h2>Three</h2>
+    <ul role="list" class="auto-grid" style="--min: 39ch">
+    {% for post in collections.three %}
+      {% include "partials/article-card.njk" %}
+    {% endfor %}
+    </ul>
+  </div>
+
+  <article class="flow wrapper">
+    <h2>WebGL</h2>
+    <ul role="list" class="auto-grid" style="--min: 39ch">
+    {% for post in collections.webgl %}
+      {% include "partials/article-card.njk" %}
+    {% endfor %}
+    </ul>
+  </div>
+
+  <article class="flow wrapper">
+    <h2>Maths</h2>
+    <ul role="list" class="auto-grid" style="--min: 39ch">
+    {% for post in collections.maths %}
+      {% include "partials/article-card.njk" %}
+    {% endfor %}
+    </ul>
+  </div>
+</div>

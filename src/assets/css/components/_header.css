@@ -1,0 +1,32 @@
+.header {
+  background: var(--header-bg);
+  color: var(--header-fg);
+  padding: var(--space-m) 1rem;
+
+  --button-bg: var(--blue-2);
+  --button-fg: #ffffff;
+
+  --button-hover-bg: var(--blue-3);
+  --button-hover-fg: #ffffff;
+
+  --button-active-bg: var(--blue-1);
+  --button-active-fg: #ffffff;
+
+  --outline: #fff;
+}
+
+.header__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header .logo {
+  flex: 0 0 auto;
+}
+
+.header .logo svg {
+  display: block;
+  width: var(--step-4);
+}

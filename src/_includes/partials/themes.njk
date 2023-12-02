@@ -1,0 +1,30 @@
+{%- set themes = ['dark', 'light', 'yellow'] -%}
+<aside class="themes | wrapper flow js" id="themeMenu" aria-labelledby="pick-a-theme">
+  <h2 id="pick-a-theme">Pick a theme:</h2>
+  <ul class="themes__list" role="list">
+    {% for theme in themes %}
+    <li class="themes__list-item">
+      <button class="themes__button | button">
+        <svg class="theme" viewBox="0 0 80 60" data-theme="{{ theme }}" aria-hidden="true">
+          <rect x="1" y="1" width="78" height="58" fill="var(--bg,#222)" stroke="var(--fg, #fff)"></rect>
+          <rect x="2" y="2" width="76" height="12" fill="var(--header-bg,#000)"></rect>
+          <g fill="var(--header-fg,#fff)">
+            <rect x="8" y="5" width="6" height="6"></rect>
+            <rect x="46" y="7" width="6" height="3"></rect>
+            <rect x="56" y="7" width="6" height="3"></rect>
+            <rect x="66" y="7" width="6" height="3"></rect>
+          </g>
+          <g fill="var(--fg,#ccc)">
+            <rect x="48" y="20" width="24" height="24"></rect>
+            <rect x="8" y="20" width="32" height="3"></rect>
+            <rect x="8" y="27" width="32" height="3"></rect>
+            <rect x="8" y="34" width="32" height="3"></rect>
+            <rect x="8" y="41" width="24" height="3"></rect>
+          </g>
+        </svg>
+        <span>{{ theme }}</span>
+      </button>
+    </li>
+    {% endfor %}
+  </ul>
+</aside>

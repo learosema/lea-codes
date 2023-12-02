@@ -1,0 +1,15 @@
+.heading-wrapper * {
+  display: inline;
+}
+
+.heading-wrapper a:last-of-type {
+  font-size: .9em;
+  text-decoration: none;
+  margin-inline-start: .5em;
+  transition: outline-offset 145ms cubic-bezier(0.25, 0, 0.4, 1);
+}
+
+.heading-wrapper a:last-of-type:hover {
+  outline: 2px solid var(--outline-color);
+  outline-offset: 5px;
+}

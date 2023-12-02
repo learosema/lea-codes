@@ -1,0 +1,29 @@
+{% include "partials/themes.njk" %}
+
+{% set curveClass = 'footer-top' %}
+{% set curveSeed = 84 %}
+{% include "partials/curves.njk" %}
+<footer class="footer">
+  <p>Made with love by <a rel="me" href="https://lea.lgbt/@lea">Lea Rosema</a></p>
+  <nav id="footerNav" class="footer-nav" aria-labelledby="footer-navigation">
+    <h2 id="footer-navigation" class="visually-hidden">Footer navigation</h2>
+    <ul role="list">
+      {% for item in navigation.bottom %}
+      <li>
+        <a
+          class="nav"
+          href="{{ item.url }}"
+          {{
+          helpers.getLinkActiveState(item.url,
+          page.url)
+          |
+          safe
+          }}
+          >{{ item.text }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+</footer>

@@ -1,0 +1,20 @@
+---
+layout: base
+---
+{% if tag %}
+  {% set collection = collections[tag] %}
+  {% set title = "Articles tagged “" + tag + "”" %}
+{% else %}
+  {% set collection = collections.all %}
+{% endif %}
+<div class="content">
+  <article class="flow wrapper">
+    <h1>{{ title }}</h1>
+    <ul role="list" class="auto-grid" style="--min: 39ch">
+    {% for post in collection | reverse %}
+      {% set headlineLevel = "h2" %}
+      {% include "partials/article-card.njk" %}
+    {% endfor %}
+    </ul>
+  </div>
+</div>

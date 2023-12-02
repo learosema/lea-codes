@@ -1,0 +1,34 @@
+.article-card {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: calc(var(--space-m) / 4);
+  border: 1px solid var(--fg, #000);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.article-card h2,
+.article-card h3 {
+  font-size: var(--step-1);
+}
+
+.article-card time {
+  display: block;
+  font-weight: 500;
+}
+
+ul.article-card__tag-list {
+  margin-top: auto;
+  padding-inline-start: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+
+}
+
+.article-card__tag-list a {
+  display: block;
+}

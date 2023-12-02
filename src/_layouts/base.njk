@@ -1,0 +1,72 @@
+{% set assetHash = global.random() %}
+
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+  <head>
+    <!-- charset/http-equiv/viewport -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- title -->
+    <title>
+      {% if title %}
+      {{ title }} | {{ meta.siteName }}
+      {% else %}
+      {{ meta.siteName }}
+      {% endif %}
+    </title>
+
+    <!-- synchronous js / schema  -->
+    {% include "schemas/base-schema.njk" %} {% if schema == 'blog' %}
+    <!-- include blogpost schema  -->
+    {%- include "schemas/blogpost-schema.njk" %} {% endif %}
+
+    <!-- synchronous css / inline css  -->
+    <link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}" />
+
+    <!-- preloads in page data -->
+    {% if preloads -%}
+    <!-- prettier-ignore -->
+      {% for preload in preloads %}
+        <link rel="preload"
+          href="{{ preload.href }}"
+          as="{{ preload.as }}"
+          {% if preload.type %}type={{ preload.type }}{% endif %}{% if preload.imagesrcset %}imagesrcset="{{ preload.imagesrcset }}" {% endif %}
+          {% if preload.crossorigin %}crossorigin{% endif %} />
+      {% endfor %}
+    {% endif %}
+
+    <!-- prefetches -->
+    {% if prefetches -%}
+      {% for prefetch in prefetches %}
+        <link rel="prefetch" href="{{ prefetch.href }}" {% if prefetch.crossorigin %}crossorigin{% endif %}>
+      {% endfor %}
+    {% endif %}
+
+    <!-- everything else: meta tags, icons, open graph etc.  -->
+    {% include "partials/meta-info.njk" %}
+  </head>
+
+  <body>
+    <!-- header -->
+    {% include "partials/header.njk" %}
+
+    <!-- content slot -->
+    <main id="main">{{ content | safe }}</main>
+
+    <!-- footer -->
+    {% include "partials/footer.njk" %}
+
+    <!-- youtube if actvated in yaml -->
+    {% if youtube %}
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.min.js"
+    ></script>
+    {% endif %}
+
+    <!-- defered js  -->
+    <script type="module" src="/assets/js/app.js?{{ assetHash }}"></script>
+  </body>
+</html>

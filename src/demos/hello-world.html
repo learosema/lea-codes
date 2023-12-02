@@ -1,0 +1,27 @@
+---
+title: Hello World
+description: This is my first test of embedding demos into my blog articles.
+---
+<style>
+:root {
+    color-scheme: dark;
+}
+</style>
+
+<h1>Hello World!</h1>
+
+That's my first demo.
+
+<script type="module">
+import vanillaH from "https://unpkg.com/vanillah?module";
+import htm from "https://unpkg.com/htm?module";
+
+const html = htm.bind(vanillaH(document));
+
+const p = html`<p>
+    This is a <em>fancy</em> paragraph
+    inserted via JavaScript.
+</p>`;
+
+document.body.appendChild(p);
+</script>

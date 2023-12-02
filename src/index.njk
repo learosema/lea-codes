@@ -1,0 +1,29 @@
+---
+title: Lea Rosema
+description: "Lea's place to write"
+layout: base.njk
+eleventyExcludeFromCollections: true
+---
+<div class="intro">
+  <article class="flow wrapper">
+    {% image "lea.webp", "Lea, standing in front of a floral blue wallpaper, wearing a black dress, red lipstick and glasses", "(min-width: 424px) 400px, calc(100vw - 24px)", "intro__picture" %}
+    <div class="intro__text flow" id="headline" tabindex="-1">
+      <header class="flow" style="--flow-space: 0;">
+        <p>Hello, I'm</p>
+        <h1>{{ title }}</h1>
+      </header>
+      <p>I'm a frontend developer, web accessibility learner and digital artist based in Hamburg.</p>
+    </div>
+  </article>
+</div>
+
+<div class="content">
+  <article class="flow wrapper">
+    <h2>Recent articles</h2>
+    <ul role="list" class="auto-grid" style="--min: 39ch">
+    {% for post in collections.post | reverse | limit(5) %}
+      {% include "partials/article-card.njk" %}
+    {% endfor %}
+    </ul>
+  </div>
+</div>

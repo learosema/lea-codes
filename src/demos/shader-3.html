@@ -1,0 +1,89 @@
+---
+title: Noise Animation
+description: Animation of noise created from sine functions, using rainbow colors
+---
+<shader-art autoplay dpr="1" role="img" tabindex="0" aria-label="{{ description }}">
+  <script type="text/buffer" id="position" data-size="2">
+    [-1, 1, -1,-1, 1,1, 1, 1, -1,-1, 1,-1]
+  </script>
+  <script type="text/buffer" id="uv" data-size="2">
+    [ 0, 0,  0, 1, 1,0, 1, 0,  0, 1, 1, 1]
+  </script>
+  <script type="text/vert">
+    precision highp float;
+    attribute vec4 position;
+    attribute vec2 uv;
+    varying vec2 vUv;
+
+    void main() {
+      vUv = uv;
+      gl_Position = position;
+    }
+  </script>
+  <script type="text/frag">
+    precision highp float;
+    varying vec2 vUv;
+    
+    uniform vec2 resolution;
+    uniform float time;
+
+    #define PI 3.141592654
+
+    float nooise(vec3 p) {
+      float n = .5 + .5 * (
+        sin(p.x * .5 + cos(p.y * 4. + .2 * cos(p.x * 2. + p.z * .5) + p.z * .3) + p.z * .4) * 
+        cos(p.y * .7 + sin(p.x * 3. + .3 * cos(p.y * 2. + p.z * .6) + p.z * .4) + p.z * .7)
+      );
+      return n;
+    }
+    
+    vec3 colorize(float n) {
+      return vec3(
+        sin(n * 2. * PI + time),
+        sin(n * 2. * PI + time + 1.),
+        sin(n * 2. * PI + time + 2.)
+      );
+    }
+
+    vec3 background() {
+      vec2 p = vUv.xy;
+      float aspectRatio = resolution.x / resolution.y;
+      p.x *= aspectRatio;
+      float n = (nooise(vec3(p, time)) 
+        + nooise(vec3(p * 3., time))) / 2.;
+      
+      n = .5 + .5 * n * sin(n * 63.);
+      return colorize(n);
+    }
+    
+    void main() {
+      gl_FragColor = vec4(background(),1.);
+    }
+  </script>
+</shader-art>
+<script type="module">
+import { ShaderArt } from 'https://cdn.jsdelivr.net/npm/shader-art@1.3.0/dist/index.esm.js';
+
+ShaderArt.register();
+</script>
+<style>
+  body {
+    margin:0;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+  }
+  
+  shader-art {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  shader-art canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  </style>

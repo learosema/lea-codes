@@ -1,0 +1,78 @@
+.tabs {
+  display: block;
+  padding: .5em;
+  background: var(--tabs-bg);
+  border-radius: .25em;
+}
+
+.tabs__tablist {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tabs__tab {
+  appearance: none;
+  font-weight: bold;
+  border: 1px solid var(--button-brd);
+  border-top-left-radius: .25em;
+  border-top-right-radius: .25em;
+  border-bottom: none;
+  background: var(--tabs-tab-bg);
+  color: var(--tabs-tab-fg);
+  padding: .6em 1.2em;
+  font-family: inherit;
+  transform: translateY(2px);
+  margin: 0 0.5rem;
+}
+
+.tabs__tab[aria-selected="true"] {
+  background: var(--tabs-tab-active-bg);
+  color: var(--tabs-tab-active-fg);
+  border: 1px solid var(--button-active-brd);
+  transform: translateY(0px);
+}
+
+.tabs__panel {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.tabs__panel[data-state="hidden"] {
+  display: none;
+}
+
+.tabs__panel a {
+  --outline: var(--fg);
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  z-index: 10;
+  text-decoration: none;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.tabs__panel a > svg {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  padding: .5rem;
+}
+
+.tabs__panel pre,
+.tabs__panel iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  border-radius: 0;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.tabs__panel pre::-webkit-scrollbar,
+.tabs__panel iframe::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,27 @@
+
+.button {
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  background: var(--button-bg, transparent);
+  color: var(--button-fg, transparent);
+  border: var(--button-brd, 1px solid transparent);
+  text-decoration: none;
+}
+
+.button--small {
+  padding: 0.125em .5em;
+}
+
+.button:hover {
+  background: var(--button-hover-bg);
+  color: var(--button-hover-fg);
+  border: var(--button-hover-brd, 1px solid transparent);
+}
+
+.button:active,
+.button[aria-pressed="true"] {
+  background: var(--button-active-bg);
+  color: var(--button-active-fg);
+  border: var(--button-active-brd, 1px solid transparent);
+}

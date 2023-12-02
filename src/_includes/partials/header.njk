@@ -1,0 +1,13 @@
+<header class="header">
+  <a href="#headline" class="skip-link">Skip to main content</a>
+
+  {% set activePage = page.url | url %}
+  <div class="header__top">
+    <a href="/" class="logo | no-underline" {% if activePage === '/' %} aria-current="page" {% endif %}>
+      {% include "svg/the-fat-l.svg" %}
+      <span class="visually-hidden">{{ meta.siteName }}</span>
+    </a>
+    {% include "partials/menu.njk" %}
+  </div>
+</header>
+

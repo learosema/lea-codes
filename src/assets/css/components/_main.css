@@ -1,0 +1,7 @@
+main {
+  flex: auto;
+}
+
+main > .content {
+  padding-block: var(--space-m);
+}

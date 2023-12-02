@@ -1,0 +1,19 @@
+---
+layout: base
+schema: blog
+---
+<div class="content">
+  <article class="post | flow wrapper">
+    <h1>{{ title }}</h1>
+    {% set definedDate = date %} {% include "partials/date.njk" %}
+    by {% if author %}{{ author }}{% elseif meta.author %}{{ meta.author }}{% endif %}
+    {% if cw %}
+      <details class="flow">
+        <summary>{{ cw }}</summary>
+        <div class="flow">
+          {{ content | safe }}
+        </div>
+      </details>
+    {% else %}{{ content | safe }}{% endif %}
+  </article>
+</div>

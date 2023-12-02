@@ -1,0 +1,3 @@
+extends: stylelint-config-recommended
+ignoreFiles:
+  - src/assets/css/vendor/*.css

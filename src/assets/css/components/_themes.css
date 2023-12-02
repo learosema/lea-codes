@@ -1,0 +1,28 @@
+.themes {
+  padding-block-start: 1rem;
+}
+
+.themes h2 {
+  font-size: var(--step-0);
+}
+
+.themes__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.themes__button {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5em;
+  border-radius: .25rem;
+}
+
+.theme {
+  display: block;
+  width: 40px;
+  height: 30px;
+}

@@ -1,0 +1,50 @@
+---
+title: Red triangle
+description: A red triangle spanning between the bottom left, top left and top right corners of the viewport.
+---
+<shader-art autoplay dpr="1" role="img" tabindex="0" aria-label="{{ description }}">
+  <script type="text/buffer" id="position" data-size="2">
+    [-1, 1, -1,-1, 1,1]
+  </script>
+  <script type="text/vert">
+    precision highp float;
+    attribute vec4 position;
+
+    void main() {
+      gl_Position = position;
+    }
+  </script>
+  <script type="text/frag">
+    precision highp float;
+    
+    void main() {
+      gl_FragColor = vec4(1., 0., 0., 1.);
+    }
+  </script>
+</shader-art>
+<script type="module">
+import { ShaderArt } from 'https://cdn.jsdelivr.net/npm/shader-art@1.3.0/dist/index.esm.js';
+
+ShaderArt.register();
+</script>
+<style>
+  body {
+    margin:0;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+  }
+  
+  shader-art {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  shader-art canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  </style>

@@ -1,0 +1,12 @@
+.demo-figure {
+  padding: 1rem;
+  border: 1px solid var(--fg);
+  border-radius: calc(var(--space-m) / 4);
+}
+
+.demo-figure img,
+.demo-figure iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}

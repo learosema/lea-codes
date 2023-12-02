@@ -1,0 +1,82 @@
+:root {
+
+  --pink-1: #4b0030;
+  --pink-2: #790051;
+  --pink-3: #d2008f;
+  --pink-4: #ff2fb2;
+  --pink-5: #ffdcec;
+  --pink-6: #fff7fb;
+
+  --blue-1: #001c30;
+  --blue-2: #003b5e;
+  --blue-3: #0071af;
+  --blue-4: #008fdb;
+  --blue-5: #c6e0ff;
+  --blue-6: #e8f2ff;
+
+  --grey-1: #222222;
+  --grey-2: #3e3e3e;
+  --grey-3: #6f6f6f;
+  --grey-4: #8b8b8b;
+  --grey-5: #e2e2e2;
+  --grey-6: #f6f6f6;
+
+  --bg: var(--grey-1);
+  --fg: #fff;
+  --outline-color: var(--blue-5);
+
+  --headline-fg: var(--pink-5);
+
+  --link-fg: var(--blue-5);
+  --link-hover-fg: var(--blue-6);
+
+  --header-bg: #000;
+  --header-fg: var(--grey-6);
+
+  --intro-bg: var(--blue-2);
+  --intro-fg: var(--blue-6);
+
+  --footer-bg: var(--pink-2);
+  --footer-fg: var(--pink-6);
+
+  --code-fg: #e5ffc3;
+  --code-bg: #1e1e1e;
+
+  --outline: #fff;
+
+  --button-bg: var(--pink-2);
+  --button-fg: #ffffff;
+
+  --button-hover-bg: var(--pink-3);
+  --button-hover-fg: #ffffff;
+
+  --button-active-bg: var(--pink-1);
+  --button-active-fg: #ffffff;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fefefe;
+    --fg: #121212;
+
+    --headline-fg: var(--pink-3);
+
+    --link-fg: var(--blue-1);
+    --link-hover-fg: var(--blue-1);
+
+    --header-bg: var(--grey-1);
+    --header-fg: var(--grey-6);
+
+    --intro-bg: var(--blue-5);
+    --intro-fg: var(--blue-1);
+
+    --footer-bg: var(--pink-5);
+    --footer-fg: var(--pink-1);
+
+    --outline: #000;
+
+    --code-fg: #008148;
+    --code-bg: #fff;
+  }
+}
