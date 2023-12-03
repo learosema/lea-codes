@@ -2,7 +2,7 @@
 
 @import 'vendor/_prism.css';
 
-@import 'config/_colors.css';
+@import 'config/_palette.css';
 @import 'config/_spacings.css';
 @import 'config/_typography.css';
 @import 'config/_body.css';

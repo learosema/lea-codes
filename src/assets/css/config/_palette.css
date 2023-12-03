@@ -1,0 +1,71 @@
+:root {
+  --gray-1: oklch(95% 0 270);
+  --gray-2: oklch(80% 0 270);
+  --gray-3: oklch(62% 0 270);
+  --gray-4: oklch(42% 0 270);
+  --gray-5: oklch(28% 0 270);
+  --gray-6: oklch(15% 0 270);
+
+  --rose-1: oklch(95% 0.05 0);
+  --rose-2: oklch(80% 0.1 0);
+  --rose-3: oklch(62% 0.1 0);
+  --rose-4: oklch(42% 0.1 0);
+  --rose-5: oklch(28% 0.1 0);
+  --rose-6: oklch(15% 0.1 0);
+
+  --orange-1: oklch(95% 0.05 50);
+  --orange-2: oklch(80% 0.1 50);
+  --orange-3: oklch(62% 0.1 50);
+  --orange-4: oklch(42% 0.1 50);
+  --orange-5: oklch(28% 0.1 50);
+  --orange-6: oklch(15% 0.1 50);
+
+  --yellow-1: oklch(95% 0.05 90);
+  --yellow-2: oklch(80% 0.1 90);
+  --yellow-3: oklch(62% 0.1 90);
+  --yellow-4: oklch(42% 0.1 90);
+  --yellow-5: oklch(28% 0.1 90);
+  --yellow-6: oklch(15% 0.1 90);
+
+  --green-1: oklch(95% 0.05 120);
+  --green-2: oklch(80% 0.1 120);
+  --green-3: oklch(62% 0.1 120);
+  --green-4: oklch(42% 0.1 120);
+  --green-5: oklch(28% 0.1 120);
+  --green-6: oklch(15% 0.1 120);
+
+  --aqua-1: oklch(95% 0.05 160);
+  --aqua-2: oklch(80% 0.1 160);
+  --aqua-3: oklch(62% 0.1 160);
+  --aqua-4: oklch(42% 0.1 160);
+  --aqua-5: oklch(28% 0.1 160);
+  --aqua-6: oklch(15% 0.1 160);
+
+  --teal-1: oklch(95% 0.05 190);
+  --teal-2: oklch(80% 0.1 190);
+  --teal-3: oklch(62% 0.1 190);
+  --teal-4: oklch(42% 0.1 190);
+  --teal-5: oklch(28% 0.1 190);
+  --teal-6: oklch(15% 0.1 190);
+
+  --blue-1: oklch(95% 0.05 270);
+  --blue-2: oklch(80% 0.1 270);
+  --blue-3: oklch(62% 0.1 270);
+  --blue-4: oklch(42% 0.1 270);
+  --blue-5: oklch(28% 0.1 270);
+  --blue-6: oklch(15% 0.1 270);
+
+  --violet-1: oklch(95% 0.05 300);
+  --violet-2: oklch(80% 0.1 300);
+  --violet-3: oklch(62% 0.1 300);
+  --violet-4: oklch(42% 0.1 300);
+  --violet-5: oklch(28% 0.1 300);
+  --violet-6: oklch(15% 0.1 300);
+
+  --purple-1: oklch(95% 0.05 330);
+  --purple-2: oklch(80% 0.1 330);
+  --purple-3: oklch(62% 0.1 330);
+  --purple-4: oklch(42% 0.1 330);
+  --purple-5: oklch(28% 0.1 330);
+  --purple-6: oklch(15% 0.1 330);
+}
