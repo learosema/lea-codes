@@ -7,20 +7,20 @@ layout: base
 {% else %}
   {% set collection = collections.post %}
 {% endif %}
-<div class="intro">
-  <article class="flow wrapper">
-    <h1>{{ title }}</h1>
-  </article>
-</div>
-
-
-<div class="content">
-  <article class="flow wrapper">
-    <ul role="list" class="auto-grid" style="--min: 39ch">
-    {% for post in collection | reverse %}
-      {% set headlineLevel = "h2" %}
-      {% include "partials/article-card.njk" %}
-    {% endfor %}
-    </ul>
+<article>
+  <div class="intro">
+    <article class="flow wrapper">
+      <h1>{{ title }}</h1>
+    </article>
   </div>
-</div>
+  <div class="content">
+    <div class="flow wrapper">
+      <ul role="list" class="auto-grid" style="--min: 39ch">
+      {% for post in collection | reverse %}
+        {% set headlineLevel = "h2" %}
+        {% include "partials/article-card.njk" %}
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</article>

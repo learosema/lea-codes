@@ -2,25 +2,24 @@
 layout: base
 schema: blog
 ---
-<div class="intro">
-  <article class="flow wrapper">
-    <h1>{{ title }}</h1>
-
-    {% set definedDate = date %} {% include "partials/date.njk" %}
-    by {% if author %}{{ author }}{% elseif meta.author %}{{ meta.author }}{% endif %}
-  </article>
-</div>
-<div class="content">
-  <article class="post | flow wrapper">
-
-
-    {% if cw %}
-      <details class="flow">
-        <summary>{{ cw }}</summary>
-        <div class="flow">
-          {{ content | safe }}
-        </div>
-      </details>
-    {% else %}{{ content | safe }}{% endif %}
-  </article>
-</div>
+<article>
+  <div class="intro">
+    <div class="flow wrapper">
+      <h1>{{ title }}</h1>
+      {% set definedDate = date %} {% include "partials/date.njk" %}
+      by {% if author %}{{ author }}{% elseif meta.author %}{{ meta.author }}{% endif %}
+    </div>
+  </div>
+  <div class="content">
+    <div class="post | flow wrapper">
+      {% if cw %}
+        <details class="flow">
+          <summary>{{ cw }}</summary>
+          <div class="flow">
+            {{ content | safe }}
+          </div>
+        </details>
+      {% else %}{{ content | safe }}{% endif %}
+    </div>
+  </div>
+</article>
