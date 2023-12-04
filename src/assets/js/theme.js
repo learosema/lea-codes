@@ -1,3 +1,6 @@
+const themePickerButton = document.querySelector('#themePickerButton');
+themePickerButton.addEventListener('click', () => themePicker.showModal());
+
 const currentTheme = localStorage?.getItem('theme');
 if (currentTheme) {
   document.body.setAttribute('data-theme', currentTheme);
@@ -20,4 +23,5 @@ themeButtons.forEach(button => button.addEventListener('click', () => {
     document.body.removeAttribute('data-theme');
     localStorage.removeItem('theme');
   }
+  themePicker.close();
 }));

@@ -20,6 +20,7 @@
 @import 'components/_heading-wrapper.css';
 @import 'components/_demo-figure.css';
 @import 'components/_tabs.css';
+@import 'components/_dialog.css';
 
 @import 'utils/_auto-grid.css';
 @import 'utils/_visually-hidden.css';

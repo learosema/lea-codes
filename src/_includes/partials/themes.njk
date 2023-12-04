@@ -1,5 +1,14 @@
 {%- set themes = ['dark', 'light', 'yellow'] -%}
-<aside class="themes | wrapper flow js" id="themeMenu" aria-labelledby="pick-a-theme">
+<dialog class="dialog" id="themePicker">
+  <form method="dialog">
+    <button class="dialog__button-close" aria-label="Close">
+      <svg viewBox="0 0 16 16">
+        <path d="M2 2 l12 12 M14 2 l-12 12" stroke-width="2" stroke="currentColor" stroke-linecap="round" />
+      </svg>
+    </button>
+
+  </form>
+<div class="themes | wrapper flow js" id="themeMenu" aria-labelledby="pick-a-theme">
   <h2 id="pick-a-theme">Pick a theme:</h2>
   <ul class="themes__list" role="list">
     {% for theme in themes %}
@@ -27,4 +36,5 @@
     </li>
     {% endfor %}
   </ul>
-</aside>
+</div>
+</dialog>

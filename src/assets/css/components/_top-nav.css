@@ -12,7 +12,12 @@
   flex-wrap: wrap;
 }
 
-.top-nav a {
+.top-nav li:empty {
+  display: none;
+}
+
+.top-nav a,
+.top-nav button {
   display: block;
   font-size: var(--step-2);
   padding: .5em;
@@ -23,5 +28,5 @@
 
 .top-nav a:hover,
 .top-nav a[aria-current="page"] {
-  border-radius: 2px solid var(--header-fg);
+  text-decoration-style: double;
 }

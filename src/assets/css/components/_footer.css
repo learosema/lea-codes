@@ -1,4 +1,5 @@
 .footer {
+  margin-block-start: var(--space-xl);
   background: var(--footer-bg);
   color: var(--footer-fg);
   padding: var(--space-m);
@@ -15,6 +16,7 @@
 
 
 .footer-nav {
+
   display: flex;
   align-items: center;
   flex: 1 auto;
@@ -43,10 +45,3 @@
   border-radius: 2px solid var(--footer-fg);
 }
 
-.footer-top {
-  margin-block-start: var(--space-xl);
-  fill: var(--bg);
-  background: var(--footer-bg);
-  width: 100vw;
-  height: 75px;
-}

@@ -4,7 +4,7 @@
     {% for item in navigation.top %}
     <li>
       <a
-        class="nav"
+        class="top-nav__item"
         href="{{ item.url }}"
         {{
         helpers.getLinkActiveState(item.url,
@@ -16,5 +16,12 @@
       >
     </li>
     {% endfor %}
+    <li class="js">
+      <button id="themePickerButton" title="Select Theme" onclick="themePicker.showModal()" aria-controls="themePicker" aria-expanded="false">
+        🎨
+      </button>
+    </li>
   </ul>
 </nav>
+
+{% include "partials/themes.njk" %}

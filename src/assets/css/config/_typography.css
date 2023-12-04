@@ -64,8 +64,8 @@ a:hover {
 }
 
 code:not([class*=language-]) {
-  color: var(--code-fg);
-  background: var(--code-bg);
+  color: var(--code-fg, #cfc);
+  background: var(--code-bg, #000);
   padding: 0 .25em;
   border-radius: .25em;
 }

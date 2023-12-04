@@ -1,0 +1,125 @@
+
+<svg aria-hidden="true" viewBox="0 0 230 120">
+  <style>
+    path:nth-child(9n) {stroke: #ff7; }
+    path:nth-child(9n+1) { stroke: #f07; }
+    path:nth-child(9n+2) { stroke: #0ff; }
+    path:nth-child(9n+3) { stroke: #fff; }
+    path:nth-child(9n+4) { stroke: #94f; }
+    path:nth-child(9n+5) { stroke: #0f0; }
+    path:nth-child(9n+6) { stroke: #ccc; }
+    path:nth-child(9n+7) { stroke: #f77; }
+    path:nth-child(9n+8) { stroke: #07f; }
+  </style>
+  <g fill="none" stroke-linecap="round" stroke-width="5">
+    <path d="M14 16 h3"/>
+    <path d="M24 16 h2"/>
+    <path d="M14 24 h4"/>
+    <path d="M25 24 h1"/>
+    <path d="M14 32 h3"/>
+    <path d="M24 32 h2"/>
+    <path d="M14 40 h12"/>
+    <path d="M14 48 h1"/>
+    <path d="M22 48 h4"/>
+    <path d="M14 56 h4"/>
+    <path d="M25 56 h1"/>
+    <path d="M14 64 h12"/>
+    <path d="M14 72 h1"/>
+    <path d="M22 72 h4"/>
+    <path d="M14 80 h3"/>
+    <path d="M24 80 h2"/>
+    <path d="M14 88 h12"/>
+    <path d="M14 96 h1"/>
+    <path d="M22 96 h12"/>
+    <path d="M41 96 h6"/>
+    <path d="M55 96 h10"/>
+    <path d="M14 104 h4"/>
+    <path d="M25 104 h3"/>
+    <path d="M35 104 h1"/>
+    <path d="M43 104 h3"/>
+    <path d="M54 104 h1"/>
+    <path d="M62 104 h2"/>
+    <path d="M84 16 h1"/>
+    <path d="M92 16 h12"/>
+    <path d="M111 16 h6"/>
+    <path d="M125 16 h10"/>
+    <path d="M84 24 h12"/>
+    <path d="M103 24 h8"/>
+    <path d="M118 24 h6"/>
+    <path d="M132 24 h3"/>
+    <path d="M84 32 h3"/>
+    <path d="M94 32 h2"/>
+    <path d="M84 40 h4"/>
+    <path d="M95 40 h1"/>
+    <path d="M84 48 h3"/>
+    <path d="M94 48 h2"/>
+    <path d="M84 56 h8"/>
+    <path d="M99 56 h8"/>
+    <path d="M114 56 h1"/>
+    <path d="M84 64 h2"/>
+    <path d="M94 64 h10"/>
+    <path d="M111 64 h4"/>
+    <path d="M84 72 h1"/>
+    <path d="M92 72 h4"/>
+    <path d="M84 80 h3"/>
+    <path d="M94 80 h2"/>
+    <path d="M84 88 h1"/>
+    <path d="M92 88 h4"/>
+    <path d="M84 96 h1"/>
+    <path d="M92 96 h12"/>
+    <path d="M111 96 h6"/>
+    <path d="M125 96 h10"/>
+    <path d="M84 104 h12"/>
+    <path d="M103 104 h8"/>
+    <path d="M118 104 h6"/>
+    <path d="M132 104 h3"/>
+    <path d="M164 16 h12"/>
+    <path d="M183 16 h4"/>
+    <path d="M194 16 h8"/>
+    <path d="M209 16 h7"/>
+    <path d="M164 24 h6"/>
+    <path d="M177 24 h12"/>
+    <path d="M196 24 h4"/>
+    <path d="M207 24 h9"/>
+    <path d="M164 32 h1"/>
+    <path d="M172 32 h4"/>
+    <path d="M204 32 h1"/>
+    <path d="M212 32 h4"/>
+    <path d="M164 40 h4"/>
+    <path d="M175 40 h1"/>
+    <path d="M204 40 h4"/>
+    <path d="M215 40 h1"/>
+    <path d="M164 48 h2"/>
+    <path d="M173 48 h3"/>
+    <path d="M204 48 h1"/>
+    <path d="M212 48 h4"/>
+    <path d="M164 56 h12"/>
+    <path d="M183 56 h4"/>
+    <path d="M194 56 h8"/>
+    <path d="M209 56 h7"/>
+    <path d="M164 64 h6"/>
+    <path d="M177 64 h12"/>
+    <path d="M196 64 h4"/>
+    <path d="M207 64 h9"/>
+    <path d="M164 72 h1"/>
+    <path d="M172 72 h4"/>
+    <path d="M204 72 h1"/>
+    <path d="M212 72 h4"/>
+    <path d="M164 80 h4"/>
+    <path d="M175 80 h1"/>
+    <path d="M204 80 h4"/>
+    <path d="M215 80 h1"/>
+    <path d="M164 88 h2"/>
+    <path d="M173 88 h3"/>
+    <path d="M204 88 h1"/>
+    <path d="M212 88 h4"/>
+    <path d="M164 96 h4"/>
+    <path d="M175 96 h1"/>
+    <path d="M204 96 h4"/>
+    <path d="M215 96 h1"/>
+    <path d="M164 104 h2"/>
+    <path d="M173 104 h3"/>
+    <path d="M204 104 h1"/>
+    <path d="M212 104 h4"/>
+  </g>
+</svg>

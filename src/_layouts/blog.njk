@@ -5,11 +5,17 @@ layout: base
   {% set collection = collections[tag] %}
   {% set title = "Articles tagged “" + tag + "”" %}
 {% else %}
-  {% set collection = collections.all %}
+  {% set collection = collections.post %}
 {% endif %}
-<div class="content">
+<div class="intro">
   <article class="flow wrapper">
     <h1>{{ title }}</h1>
+  </article>
+</div>
+
+
+<div class="content">
+  <article class="flow wrapper">
     <ul role="list" class="auto-grid" style="--min: 39ch">
     {% for post in collection | reverse %}
       {% set headlineLevel = "h2" %}

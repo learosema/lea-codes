@@ -1,11 +1,13 @@
 ---
 layout: base
 ---
+<div class="intro">
+  <article class="flow wrapper">
+    <h1>{{ title }}</h1>
+  </article>
+</div>
 <div class="content">
   <article class="post | flow wrapper">
-    <h1>{{ title }}</h1>
-    {% set definedDate = date %} {% include "partials/date.njk" %}
-    by {% if author %}{{ author }}{% elseif meta.author %}{{ meta.author }}{% endif %}
     {{ content | safe }}
   </article>
 </div>

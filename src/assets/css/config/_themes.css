@@ -16,8 +16,8 @@
   --intro-bg: var(--violet-5);
   --intro-fg: var(--violet-1);
 
-  --footer-bg: var(--purple-6);
-  --footer-fg: var(--purple-2);
+  --footer-bg: var(--rose-5);
+  --footer-fg: var(--rose-1);
 
   --code-fg: var(--green-1);
   --code-bg: var(--grey-6);
@@ -42,8 +42,8 @@
 
   --tabs-bg: #000;
   --tabs-tab-bg: #000;
-  --tabs-tab-fg: var(--grey-5);
-  --tabs-tab-active-bg: var(--grey-2);
+  --tabs-tab-fg: var(--gray-2);
+  --tabs-tab-active-bg: var(--gray-5);
   --tabs-tab-active-fg: #fff;
 
 }
@@ -52,13 +52,13 @@
 @media (prefers-color-scheme: light) {
   :root {
     --bg: #fff;
-    --fg: var(--gray-6);
+    --fg: var(--gray-5);
     --outline-color: var(--blue-5);
 
     --headline-fg: var(--pink-5);
 
-    --link-fg: var(--blue-2);
-    --link-hover-fg: var(--blue-1);
+    --link-fg: var(--blue-4);
+    --link-hover-fg: var(--aqua-4);
 
     --header-bg: var(--gray-5);
     --header-fg: var(--yellow-1);
@@ -66,11 +66,11 @@
     --intro-bg: var(--violet-2);
     --intro-fg: var(--violet-6);
 
-    --footer-bg: var(--purple-2);
-    --footer-fg: var(--purple-6);
+    --footer-bg: var(--rose-5);
+    --footer-fg: var(--rose-1);
 
-    --code-fg: var(--green-1);
-    --code-bg: var(--grey-6);
+    --code-fg: var(--green-4);
+    --code-bg: var(--gray-1);
 
     --card-bg: var(--gray-1);
     --card-fg: #000;
@@ -92,21 +92,21 @@
 
     --tabs-bg: #000;
     --tabs-tab-bg: #000;
-    --tabs-tab-fg: var(--grey-5);
-    --tabs-tab-active-bg: var(--grey-2);
+    --tabs-tab-fg: var(--gray-2);
+    --tabs-tab-active-bg: var(--gray-5);
     --tabs-tab-active-fg: #fff;
   }
 }
 
 [data-theme="light"] {
   --bg: #fff;
-  --fg: var(--gray-6);
+  --fg: var(--gray-5);
   --outline-color: var(--blue-5);
 
   --headline-fg: var(--pink-5);
 
-  --link-fg: var(--blue-2);
-  --link-hover-fg: var(--blue-1);
+  --link-fg: var(--blue-4);
+  --link-hover-fg: var(--aqua-4);
 
   --header-bg: var(--gray-5);
   --header-fg: var(--yellow-1);
@@ -114,11 +114,11 @@
   --intro-bg: var(--violet-2);
   --intro-fg: var(--violet-6);
 
-  --footer-bg: var(--purple-2);
-  --footer-fg: var(--purple-6);
+  --footer-bg: var(--rose-5);
+  --footer-fg: var(--rose-1);
 
-  --code-fg: var(--green-1);
-  --code-bg: var(--grey-6);
+  --code-fg: var(--green-4);
+  --code-bg: var(--gray-1);
 
   --card-bg: var(--gray-1);
   --card-fg: #000;
@@ -140,8 +140,8 @@
 
   --tabs-bg: #000;
   --tabs-tab-bg: #000;
-  --tabs-tab-fg: var(--grey-5);
-  --tabs-tab-active-bg: var(--grey-2);
+  --tabs-tab-fg: var(--gray-2);
+  --tabs-tab-active-bg: var(--gray-5);
   --tabs-tab-active-fg: #fff;
 }
 
@@ -204,7 +204,8 @@
   --header-fg: #cc0;
 }
 
-[data-theme="yellow"] img {
+[data-theme="yellow"] img,
+[data-theme="yellow"] svg {
   filter: sepia(1) brightness(0.5);
 }
 

@@ -2,6 +2,6 @@ main {
   flex: auto;
 }
 
-main > .content {
+.content {
   padding-block: var(--space-m);
 }

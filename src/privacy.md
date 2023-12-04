@@ -1,7 +1,7 @@
 ---
 title: Privacy policy
 description: Privacy policy for this blog
-layout: post
+layout: page
 author: Lea Rosema
 eleventyExcludeFromCollections: true
 ---
