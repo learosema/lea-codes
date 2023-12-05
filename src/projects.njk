@@ -1,0 +1,32 @@
+---
+title: Projects
+description: This is a place where I write about my personal projects
+layout: base
+eleventyExcludeFromCollections: true
+---
+<article>
+  <div class="intro">
+    <div class="flow wrapper">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+      <nav class="breadcrumb">
+        <ul role="list">
+          <li><a href="/projects">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="content flow">
+    <section class="flow wrapper">
+    <ul role="list" class="auto-grid" style="--min: 39ch">
+    {% for project in projects %}
+      <li class="article-card | block-link">
+        <h2><a href="{{meta.url}}/projects/{{ project.tag }}">{{ project.title }}</a></h2>
+        <p>{{ project.description }}</p>
+      </li>
+    {% endfor %}
+    </ul>
+    </section>
+  </div>
+</article>

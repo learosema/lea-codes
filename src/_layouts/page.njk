@@ -5,6 +5,16 @@ layout: base
   <div class="intro">
     <div class="flow wrapper">
       <h1>{{ title }}</h1>
+      {% if breadcrumb %}
+      <nav class="breadcrumb">
+        <ul role="list">
+          {% for item in breadcrumb %}
+          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+          <li><a href="{{ page.url }}">{{ title }}</a></li>
+        </ul>
+      </nav>
+      {% endif %}
     </div>
   </div>
   <div class="content">

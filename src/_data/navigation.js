@@ -9,8 +9,8 @@ module.exports = {
       url: '/about/',
     },
     {
-      text: 'Resources',
-      url: '/resources/',
+      text: 'Projects',
+      url: '/projects/',
     },
     {
       text: 'Blog',

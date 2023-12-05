@@ -7,7 +7,7 @@
   {% set definedDate = post.data.date %}
   {% include "partials/date.njk" %}
   <p>{{ post.data.description }}</p>
-  <ul class="article-card__tag-list">
+  <ul role="list" class="article-card__tag-list">
     {% for tag in post.data.tags %}
       <li>
         <a class="button button--small" href="{{ meta.url }}/tags/{{ tag }}/">{{ tag }}</a>

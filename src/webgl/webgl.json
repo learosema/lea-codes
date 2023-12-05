@@ -1,4 +1,11 @@
 {
   "tags": ["resources", "webgl"],
-  "layout": "post"
+  "layout": "post",
+  "breadcrumb": [
+    {
+      "title": "Projects", "url": "/projects"
+    }, {
+      "title": "WebGL", "url": "/projects/webgl"
+    }
+  ]
 }

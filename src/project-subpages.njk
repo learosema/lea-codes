@@ -1,0 +1,38 @@
+---
+layout: base
+pagination:
+  data: projects
+  size: 1
+  alias: project
+description: project.description
+permalink: /projects/{{ project.tag }}/
+eleventyComputed:
+  title: '{{ project.title }}'
+  description: '{{ project.description }}'
+eleventyExcludeFromCollections: true
+---
+<article>
+  <div class="intro">
+    <div class="flow wrapper">
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.description }}</p>
+      <nav class="breadcrumb">
+        <ul role="list">
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="{{ page.url }}">{{ project.title }}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="content flow">
+    <section class="flow wrapper">
+      {% set collection = collections[project.tag] %}
+      <ul role="list" class="auto-grid" style="--min: 39ch">
+      {% for post in collection %}
+        {% include "partials/article-card.njk" %}
+      {% endfor %}
+      </ul>
+    </section>
+  </div>
+</article>

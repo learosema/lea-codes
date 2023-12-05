@@ -1,5 +1,12 @@
 
 {
   "tags": ["resources", "three"],
-  "layout": "post"
+  "layout": "post",
+  "breadcrumb": [
+    {
+      "title": "Projects", "url": "/projects"
+    }, {
+      "title": "Three", "url": "/projects/three"
+    }
+  ]
 }

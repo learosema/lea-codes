@@ -1,4 +1,11 @@
 {
   "tags": ["resources", "maths"],
-  "layout": "post"
+  "layout": "post",
+  "breadcrumb": [
+    {
+      "title": "Projects", "url": "/projects"
+    }, {
+      "title": "Maths", "url": "/projects/maths"
+    }
+  ]
 }

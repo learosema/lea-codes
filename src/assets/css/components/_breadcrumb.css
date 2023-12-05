@@ -1,0 +1,26 @@
+.breadcrumb ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  font-size: var(--step--1);
+}
+
+.breadcrumb li {
+  background: var(--button-bg);
+  min-height: var(--step-0);
+  padding: .125em .5em;
+  border-radius: .25rem;
+  position: relative;
+}
+
+.breadcrumb a {
+  display: flex;
+  height: 100%;
+  gap: .25rem;
+  align-items: center;
+  color: var(--button-fg);
+  border-radius: .25rem;
+  text-decoration: none;
+}

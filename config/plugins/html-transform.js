@@ -16,7 +16,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addTransform('html-minify', async (content, path) => {
     if (path && path.endsWith('.html')) {
       const window = dom.parseHTML(content);
-
+      if (! window) {
+        return content;
+      }
       for (const transform of transforms) {
         const postprocess = await transform(window, content, path);
         content = window.document.toString();

@@ -7,7 +7,18 @@ schema: blog
     <div class="flow wrapper">
       <h1>{{ title }}</h1>
       {% set definedDate = date %} {% include "partials/date.njk" %}
-      by {% if author %}{{ author }}{% elseif meta.author %}{{ meta.author }}{% endif %}
+      <p>by {% if author %}{{ author }}{% elseif meta.author %}{{ meta.author }}{% endif %}</p>
+
+      {% if breadcrumb %}
+      <nav class="breadcrumb">
+        <ul role="list">
+          {% for item in breadcrumb %}
+          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+          <li><a aria-current="page" href="{{ page.url }}">{{ title }}</a></li>
+        </ul>
+      </nav>
+      {% endif %}
     </div>
   </div>
   <div class="content">
