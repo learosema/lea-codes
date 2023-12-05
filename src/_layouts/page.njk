@@ -1,13 +1,15 @@
 ---
 layout: base
 ---
-<div class="intro">
-  <article class="flow wrapper">
-    <h1>{{ title }}</h1>
-  </article>
-</div>
-<div class="content">
-  <article class="post | flow wrapper">
-    {{ content | safe }}
-  </article>
-</div>
+<article>
+  <div class="intro">
+    <div class="flow wrapper">
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+  <div class="content">
+    <div class="post | flow wrapper">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>

@@ -197,16 +197,16 @@
   stroke: #cc0;
 }
 
+[data-theme="yellow"] img,
+[data-theme="yellow"] svg {
+  filter: sepia(1) brightness(0.5);
+}
+
 [data-theme="yellow"] .themes__button svg {
   --bg: #000;
   --fg: #cc0;
   --header-bg: #000;
   --header-fg: #cc0;
-}
-
-[data-theme="yellow"] img,
-[data-theme="yellow"] svg {
-  filter: sepia(1) brightness(0.5);
 }
 
 [data-theme="yellow"] pre[class] {

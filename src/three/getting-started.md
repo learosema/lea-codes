@@ -16,9 +16,9 @@ The [official site](https://threejs.org) features a lot of examples you can expl
 
 In this chapter I will show a basic example of a three.js Hello World application.
 
-### First steps
+## First steps
 
-#### Import three.js dependencies
+### Import three.js dependencies
 
 This demo uses ES module imports, using the [skypack cdn](https://skypack.dev/). In bigger products, you may want to use some kind of [Parcel](https://parceljs.org/) or [Webpack](https://webpack.js.org/) toolchain for that. [createapp.dev](https://createapp.dev/) can help you with that.
 
@@ -31,7 +31,7 @@ import * as THREE from 'https://cdn.skypack.dev/three/build/three.module.js';
 import { OrbitControls } from 'https://cdn.skypack.dev/three/examples/jsm/controls/OrbitControls.js';
 ```
 
-#### Set up the renderer
+### Set up the renderer
 
 To initialize Three.js, you will have to choose a renderer. Usually, you will choose the WebGL renderer. Another popular choice is the SVGRenderer.
 
@@ -42,7 +42,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 ```
 
-#### Init the camera
+### Init the camera
 
 Initialize a camera with a perspective view. The parameters are
 
@@ -64,7 +64,7 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 5;
 ```
 
-#### Create scene and add meshes
+### Create scene and add meshes
 
 Three.js organizes every kind of 3d objects in a scene graph.
 Every mesh takes a material and a geometry.
@@ -87,7 +87,7 @@ for (let i = 0; i < 50; i++) {
 }
 ```
 
-#### Setup lights
+### Setup lights
 
 The following section sets up a directional light and an ambient light.
 
@@ -105,7 +105,7 @@ dirLight.target.position.set(-5, 0, 0);
 scene.add(dirLight);
 ```
 
-#### Setup the OrbitControls
+### Setup the OrbitControls
 
 The OrbitControls is a control to navigate through the scene using the mouse or finger on touch devices.
 
@@ -115,7 +115,7 @@ controls.target.set(0, 0, 0);
 controls.update();
 ```
 
-#### Init event handlers
+### Init event handlers
 
 ```js
 window.addEventListener('resize', this.onResize, false);
@@ -124,7 +124,7 @@ window.addEventListener('resize', this.onResize, false);
 controls.addEventListener('change', this.render, false);
 ```
 
-#### Resize the canvas
+### Resize the canvas
 
 On resize, you will need to adjust the renderer viewport with the `renderer.setSize` method.
 Also, you will need to update the aspect property in the camera to the screen's aspect ratio.
@@ -136,13 +136,13 @@ camera.aspect = canvas.clientWidth / canvas.clientHeight;
 camera.updateProjectionMatrix();
 ```
 
-#### Rendering the scene
+### Rendering the scene
 
 ```js
 renderer.render(scene, camera);
 ```
 
-#### Dispose all the things
+### Dispose all the things
 
 In the demo, dispose is never called, but if you're using some kind of client side navigation where the Three.js element is destroyed and re-initialized (this also happens a lot with dev servers using hot reload), you will need to clean up all aquired three.js resources. Also, you will need to take care of disposal as soon as you remove meshes from the scene:
 
@@ -153,4 +153,4 @@ In the demo, dispose is never called, but if you're using some kind of client si
 
 ### CodePen Demo
 
-See [https://codepen.io/terabaud/pen/abNZjWm](https://codepen.io/terabaud/pen/abNZjWm).
+See [https://codepen.io/terabaud/pen/abNZjWm](https://codepen.io/learosema/pen/abNZjWm).

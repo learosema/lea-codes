@@ -3,7 +3,7 @@ title: Working with Vectors
 description: Working with Vectors in Three.js
 ---
 
-## Working with vectors
+Three.js provides several classes for vector arithmetics. One thing to keep in mind is that the methods like `add` modify the current object instance and won't create a new instance.
 
 ```js
 // Initialization:

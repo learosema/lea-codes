@@ -1,10 +1,14 @@
-const themePickerButton = document.querySelector('#themePickerButton');
+const $ = document.querySelector.bind(document);
+
+const themePickerButton = $('#themePickerButton');
+const themePicker = $('#themePicker');
+
 themePickerButton.addEventListener('click', () => themePicker.showModal());
 
 const currentTheme = localStorage?.getItem('theme');
 if (currentTheme) {
   document.body.setAttribute('data-theme', currentTheme);
-  const themeButton = document.querySelector(`.themes__button svg[data-theme="${currentTheme}"]`)?.parentElement;
+  const themeButton = $(`.themes__button svg[data-theme="${currentTheme}"]`)?.parentElement;
   if (themeButton) {
     themeButton.setAttribute('aria-pressed', true);
   }

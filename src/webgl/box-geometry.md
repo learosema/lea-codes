@@ -1,9 +1,7 @@
 ---
 title: Box Geometry
 ---
-## Box geometry
-
-To define a geometry for a box, you split up the cube into triangles and provide the coordinates of these triangles in the GL buffer.
+To define a geometry for a box, you split up the cube into triangles (two triangles for each side of the box) and provide the coordinates of these triangles in the GL buffer.
 First, I defined all 8 vertices that are used for the box geometry.
 
 Then, I defined the vertices by providing the vertex indices which I then mapped to the vertex data.

@@ -14,6 +14,19 @@
   gap: .5rem;
 }
 
+.article-card__tag-list {
+  margin-top: auto;
+  padding-inline-start: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.article-card__tag-list a {
+  display: block;
+}
+
 .article-card h2,
 .article-card h3 {
   font-size: var(--step-1);
@@ -23,21 +36,9 @@
   }
 }
 
+
 .article-card time {
   display: block;
   font-weight: 500;
 }
 
-ul.article-card__tag-list {
-  margin-top: auto;
-  padding-inline-start: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-
-}
-
-.article-card__tag-list a {
-  display: block;
-}

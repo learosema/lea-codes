@@ -6,9 +6,7 @@ tags:
   - models
 ---
 
-## Model Loader
-
-Three.js provides loaders for model file formats.
+Three.js provides several loaders for model file formats.
 
 - [GLTFLoader](https://threejs.org/docs/index.html#examples/en/loaders/GLTFLoader)
 - [DRACOLoader](https://threejs.org/docs/index.html#examples/en/loaders/DRACOLoader)
@@ -16,3 +14,4 @@ Three.js provides loaders for model file formats.
 ### Example
 
 - [GLTF model loader example on Codepen](https://codepen.io/terabaud/pen/NWrjGaO?editors=1010)
+- [GLTF model loader example with DRACO encoding](https://codepen.io/learosema/pen/oNYXMxO?editors=0010)

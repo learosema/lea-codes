@@ -7,8 +7,6 @@ tags:
 author: Lea Rosema
 ---
 
-## Shadows
-
 As mentioned in the chapter about lights, some light sources are able to cast shadows.
 
 To enable shadows in your Three.js scene, setup the renderer to use shadow maps:
@@ -33,7 +31,7 @@ plane.receiveShadow = true;
 For best performance, a common practice is to use only one lights with shadow-casting enabled.
 An alternative approach is to use fake shadows, as described in the ThreeJS fundamentals article on shadows (see below).
 
-### Demo
+## Demo
 
 Check out this [demo on CodePen](https://codepen.io/terabaud/pen/LYZKZNV?editors=1010)
 

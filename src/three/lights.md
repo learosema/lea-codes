@@ -5,8 +5,6 @@ tags:
   - lights
 ---
 
-## Lights
-
 Three.js provides several classes to add light to your scene, based on the abstract classes [`Light`](https://threejs.org/docs/index.html#api/en/lights/Light) or [`LightProbe`](https://threejs.org/docs/index.html#api/en/lights/LightProbe)
 
 ### Light vs LightProbe

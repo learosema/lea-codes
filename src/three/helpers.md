@@ -8,7 +8,7 @@ tags:
 Three.js provides several helpers for debugging purposes that help you with the positioning and
 orientation of meshes, cameras and lights.
 
-## Some Helpers
+## Common Helper Classes
 
 - [`BoxHelper`](https://threejs.org/docs/index.html#api/en/helpers/BoxHelper) – shows the bounding box of an object
 - [`AxesHelper`](https://threejs.org/docs/index.html#api/en/helpers/AxesHelper) – shows the X, Y, Z axes

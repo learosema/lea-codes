@@ -5,8 +5,6 @@ tags:
   - textures
 ---
 
-## Textures
-
 To load textures, Three.js provides a [`TextureLoader`](https://threejs.org/docs/index.html#api/en/loaders/TextureLoader). Optionally, you can use [`LoadingManager`](https://threejs.org/docs/index.html#api/en/loaders/managers/LoadingManager) to keep track of the loading progress of the files.
 
 ```js
