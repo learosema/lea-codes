@@ -14,9 +14,6 @@ module.exports = async function () {
     return;
   }
   for (const inputFileName of files) {
-    if (!inputFileName.endsWith('-preview.svg')) {
-      continue;
-    }
     const outputDir = path.dirname(inputFileName);
 
     Image(inputFileName, {
