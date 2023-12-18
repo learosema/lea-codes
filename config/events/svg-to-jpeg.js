@@ -20,7 +20,7 @@ module.exports = async function () {
       formats: ['jpeg'],
       outputDir,
       filenameFormat: function (id, src, width, format, options) {
-        const outputFileName = `${path.basename(inputFileName)}.${format}`
+        const outputFileName = `${path.basename(inputFileName)}`.replace(/\.svg$/, `.${format}`);
         return outputFileName;
       },
     });
