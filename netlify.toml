@@ -8,6 +8,12 @@
     Permissions-Policy = "autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=()"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
+[[redirects]]
+  from = "https://blog.lea.lgbt/*"
+  to = "https://lea.codes/:splat"
+  status = 301
+  force = true
+
 [build]
   command = "npm run build"
   publish = "dist"
