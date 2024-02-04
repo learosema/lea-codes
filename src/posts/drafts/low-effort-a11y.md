@@ -1,27 +1,42 @@
-# Low Effort Web Accessibility
+# A Low Effort Web Accessibility?
 
-A common myth about Web accessibility is that it is very hard and expensive. In this article, I want to show a possible approach to create accessible web sites with low effort.
+A common myth about Web accessibility is that it is very hard and expensive. One thing I've experienced in many past projects was: Accessibility was not an objective at all. It wasn't although the developer team put a big focus on Software Quality.
+
+It's not understandable to me that Accessibility is so hardly neglected.
+
+Accessibility is one very important criteria for good software quality. In fact, they complement each other pretty well. Robustness, for example is one core feature for Software Quality and is also part of the WCAG (Web Content Accessibility Guidelines), see [the POUR principles](https://www.w3.org/WAI/WCAG22/Understanding/intro#understanding-the-four-principles-of-accessibility): Perceivable, Operable, Understandable and _Robust_.
+
+So what can help improving the accessibility of a product and integrating it into the development process? Let's have a look at several approaches.
 
 ## Let's use AI for that?
 
-When talking about low effort, AI might come to mind. But to be strict, AI is not low effort.
-AI comes with a big carbon-dioxide footprint and this should be considered.
+When talking about low effort, AI might instantly come to mind. 
 
-Furthermore, there are several issues with AI which doesn't make it a good choice for content creators. Casey Kreer held a talk on that at the 37C3.
+There is some potential AI can assist in building accessible products. However, AI cannot replace proper accessibilty expertise. As of current, AI can generate relatively good alt text but might miss important context.
 
-One of her points on this was because AI output is biased. All output needs to be fact-checked and thus needs to be reviewed carefully.
+Also, to be strict, AI is not really low effort. It comes with a big carbon-dioxide footprint and this should be considered and counted in.
+
+Furthermore, there are several issues with AI which doesn't make it a good choice for content creators. Casey Kreer held a great talk on that at the 37C3: [Rettet uns die KI?](https://media.ccc.de/v/37c3-12157-rettet_uns_die_ki).
+
+One of her points on this was because AI output is biased and sometimes it even lies to you. All output needs to be fact-checked and thus needs to be reviewed carefully.
 
 There is still the same amount of in-depth accessibility testing to be done. So it doesn't really make the developer's life easier.
 
-But the most important point is: AI should assist users rather than developers. There, it can be a game-changer.
-
-## But it's hard and expensive
-
-Yes, creating accessible systems requires additional effort and it does cost money. At first glance, this seems barely feasible, especially for smaller budgets.
+But the most important point is: AI should assist users rather than developers.
 
 ## The wrong track
 
-The extra cost of accessibility often tricks deciders into choosing a wrong track along the road. They might consider buying an "accessibility overlay" for the website. However, that's not a cheap solution and cannot automagically all issues.
+The extra cost of accessibility often tricks deciders into choosing a wrong track along the road. They might consider buying an "accessibility overlay" for the website. They also promise AI will aotumatically fix every accessibility problem of your website. However, that's not a cheap solution and cannot automagically all issues.
+
+There is are several reviews whether overlays can keep their promises.
+
+According to the [BFIT Bund](https://www.bfit-bund.de/DE/Publikation/einschaetzung-overlaytools.html):
+
+- Currently, overlay tools are not able to display a website that has barriers in a completely barrier-free manner.
+- The use of such tools can create further barriers to the website.
+- Overlay tools can improve existing accessibility, e.g. B. additional criteria of conformity level AAA of the WCAG must be met.
+
+So, accessibility tools can not ensure a website is completely barrier-free but can introduce further barriers.
 
 ## Starting with accessibility from the ground up
 
@@ -61,8 +76,10 @@ One key principle is: focus on things you are familiar with, hire where you are 
 
 Integrate automated accessibility tools into your build pipeline
 
-## Key point
+## Conclusion
 
+- a11y is always effort and there's no shortcut
+- automagic
 - TODO
 - hire accessibility experts, especially people with disabilities
 - you don't people with disabilities, they are the teachers (sometimes deliberately), they provide valuable feedback aka ("pupil-teacher-principle")
