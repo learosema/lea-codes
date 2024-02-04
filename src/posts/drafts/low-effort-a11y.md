@@ -26,11 +26,9 @@ But the most important point is: AI should assist users rather than developers.
 
 ## The wrong track
 
-The extra cost of accessibility often tricks deciders into choosing a wrong track along the road. They might consider buying an "accessibility overlay" for the website. They also promise AI will aotumatically fix every accessibility problem of your website. However, that's not a cheap solution and cannot automagically all issues.
+The extra cost of accessibility often tricks deciders into choosing a wrong track along the road. They might consider buying an "accessibility overlay" for the website. They also promise AI will automatically fix every accessibility problem of your website.
 
-There is are several reviews whether overlays can keep their promises.
-
-According to the [BFIT Bund](https://www.bfit-bund.de/DE/Publikation/einschaetzung-overlaytools.html):
+There is are several reviews whether overlays can keep their promises. According to the german [BFIT Bund](https://www.bfit-bund.de/DE/Publikation/einschaetzung-overlaytools.html):
 
 - Currently, overlay tools are not able to display a website that has barriers in a completely barrier-free manner.
 - The use of such tools can create further barriers to the website.
