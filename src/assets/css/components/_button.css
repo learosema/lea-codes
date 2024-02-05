@@ -2,6 +2,7 @@
 .button {
   padding: 0.5em 1em;
   font-weight: 500;
+  line-height: 1;
   border-radius: 1em;
   background: var(--button-bg, transparent);
   color: var(--button-fg, transparent);
@@ -11,8 +12,6 @@
 
 .button--small {
   font-size: 0.8em;
-  padding: 0.125em 1em;
-  border-radius: 1em;
 }
 
 .button:hover {
