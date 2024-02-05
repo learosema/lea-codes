@@ -32,7 +32,7 @@ JSX gained a lot of popularity and so other frameworks adopted it.
 
 One thing that left me confused when I had a first look at React 17.
 
-The team decided to the JSX processor so now there is a React-17 way and a React-pre-17 way to transpile JSX. TypeScript provides different transpile options, `react` for the pre-17 transpile and `react-jsx` for the transpile for versions 17 and up. That also is confusing and I always have to look up which is which.
+The team decided to introduce a breaking change to the JSX factory so now there is a React-17 way and a React-pre-17 way to transpile JSX. TypeScript provides different transpile options, `react` for the pre-17 transpile and `react-jsx` for the transpile for versions 17 and up. That also is confusing and I always have to look up which is which.
 
 ## Pre-17-JSX
 
