@@ -2,7 +2,7 @@
 .button {
   padding: 0.5em 1em;
   font-weight: 500;
-  border-radius: 0.25rem;
+  border-radius: 1em;
   background: var(--button-bg, transparent);
   color: var(--button-fg, transparent);
   border: var(--button-brd, 1px solid transparent);
@@ -10,7 +10,9 @@
 }
 
 .button--small {
-  padding: 0.125em .5em;
+  font-size: 0.8em;
+  padding: 0.125em 1em;
+  border-radius: 1em;
 }
 
 .button:hover {
