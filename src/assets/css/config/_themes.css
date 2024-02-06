@@ -10,7 +10,7 @@
   --link-fg: var(--blue-2);
   --link-hover-fg: var(--blue-1);
 
-  --header-bg: #000;
+  --header-bg: var(--gray-6);
   --header-fg: var(--yellow-1);
 
   --intro-bg: var(--violet-5);
