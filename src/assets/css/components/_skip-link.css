@@ -3,11 +3,17 @@
   top: 1rem;
   left: 1rem;
   z-index: 100;
-  font-size: var(--step-2);
+  font-family: system-ui, sans-serif;
   padding: .5em;
   border-radius: .5rem;
-  color: var(--header-fg);
-  background: var(--header-bg);
+  border: 2px solid var(--button-fg);
+  color: var(--button-fg);
+  background: var(--button-bg);
+
+  &:hover {
+    color: var(--button-hover-fg);
+    background: var(--button-hover-bg);
+  }
 }
 
 .skip-link:not(:focus):not(:active) {

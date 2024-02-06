@@ -9,10 +9,15 @@
   color: var(--button-fg, transparent);
   border: var(--button-brd, 1px solid transparent);
   text-decoration: none;
+  --outline-color: var(--button-bg);
 }
 
 .button--small {
   font-size: 0.8em;
+}
+
+.button:focus {
+  outline: 2px solid var(--outline-color);
 }
 
 .button:hover {

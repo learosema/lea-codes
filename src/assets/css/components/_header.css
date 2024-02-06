@@ -3,8 +3,10 @@
   color: var(--header-fg);
   padding: var(--space-m) 1rem;
 
-  --outline: var(--fg);
+  --outline-color: var(--fg);
 }
+
+
 
 .header__top {
   display: flex;
@@ -14,6 +16,7 @@
 }
 
 .header .logo {
+  color: var(--header-fg);
   flex: 0 0 auto;
 }
 
