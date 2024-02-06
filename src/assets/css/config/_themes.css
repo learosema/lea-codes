@@ -12,11 +12,13 @@
 
   --header-bg: var(--gray-6);
   --header-fg: var(--yellow-1);
+  --header-fg-current: var(--orange-1);
+  --header-bg-current: #000;
 
   --intro-bg: var(--violet-5);
   --intro-fg: var(--violet-1);
 
-  --footer-bg: var(--rose-5);
+  --footer-bg: var(--purple-6);
   --footer-fg: var(--rose-1);
 
   --code-fg: var(--green-1);
@@ -66,7 +68,7 @@
     --intro-bg: var(--violet-2);
     --intro-fg: var(--violet-6);
 
-    --footer-bg: var(--rose-5);
+    --footer-bg: var(--purple-5);
     --footer-fg: var(--rose-1);
 
     --code-fg: var(--green-5);
@@ -114,7 +116,7 @@
   --intro-bg: var(--violet-2);
   --intro-fg: var(--violet-6);
 
-  --footer-bg: var(--rose-5);
+  --footer-bg: var(--purple-5);
   --footer-fg: var(--rose-1);
 
   --code-fg: var(--green-4);
@@ -153,6 +155,7 @@
 
   --header-bg: #000;
   --header-fg: #cc0;
+  --header-fg-current: #cc0;
 
   --footer-bg: #000;
   --footer-fg: #cc0;
@@ -190,6 +193,10 @@
   --card-button-bg: #220;
   --card-button-active-bg: #220;
   --card-button-hover-bg: #220;
+}
+
+[data-theme="yellow"] .footer::before {
+  background: none;
 }
 
 [data-theme="yellow"] .logo__svg g {

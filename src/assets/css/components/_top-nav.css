@@ -20,13 +20,18 @@
 .top-nav button {
   display: block;
   font-size: var(--step-2);
-  padding: .5em;
+  font-weight: 900;
   color: var(--header-fg);
   background: var(--header-bg);
-  border-radius: .5rem;
+  border-radius: 1em;
+  padding: 0.3em 0.6em;
+  text-underline-offset: 0.1em;
+  transition: text-underline-offset 200ms ease;
 }
 
 .top-nav a:hover,
 .top-nav a[aria-current="page"] {
-  text-decoration-style: double;
+  color: var(--header-fg-current);
+  background: var(--header-bg-current);
+  text-underline-offset: 0.2em;
 }

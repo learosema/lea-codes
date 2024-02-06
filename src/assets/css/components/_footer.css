@@ -1,8 +1,23 @@
+
+
 .footer {
-  margin-block-start: var(--space-xl);
+  margin-block-start: 4em;
   background: var(--footer-bg);
   color: var(--footer-fg);
-  padding: var(--space-m);
+  padding: 4em 1em 1em 1em;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1em;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 27%, rgb(241, 235, 27), rgb(241, 235, 27) 33%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
+  }
 }
 
 

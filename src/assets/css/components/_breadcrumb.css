@@ -27,6 +27,7 @@
       > a {
         display: flex;
         height: 100%;
+        font-weight: 400;
         gap: .25rem;
         align-items: center;
         color: var(--intro-fg);
