@@ -30,6 +30,7 @@ eleventyExcludeFromCollections: true
       {% set collection = collections[project.tag] %}
       <ul role="list" class="auto-grid" style="--min: 39ch">
       {% for post in collection %}
+        {% set useH2 = true %}
         {% include "partials/article-card.njk" %}
       {% endfor %}
       </ul>

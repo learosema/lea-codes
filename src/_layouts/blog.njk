@@ -17,7 +17,7 @@ layout: base
     <div class="flow wrapper">
       <ul role="list" class="auto-grid" style="--min: 39ch">
       {% for post in collection | reverse %}
-        {% set headlineLevel = "h2" %}
+        {% set useH2 = true %}
         {% include "partials/article-card.njk" %}
       {% endfor %}
       </ul>
