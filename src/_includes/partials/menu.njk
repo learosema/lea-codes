@@ -16,12 +16,20 @@
       >
     </li>
     {% endfor %}
-    <li class="js">
-      <button id="themePickerButton" title="Select Theme" onclick="themePicker.showModal()" aria-controls="themePicker" aria-expanded="false">
-        🎨
-      </button>
-    </li>
   </ul>
 </nav>
+
+<button class="theme-picker | js" id="themePickerButton" title="Select Theme" onclick="themePicker.showModal()" aria-controls="themePicker" aria-expanded="false">
+  <svg width="64" height="64" viewBox="0 0 44 44">
+    <g fill="none" stroke-width="5">
+    <circle cx="44" r="40" stroke="red"/>
+    <circle cx="44" r="35" stroke="orange"/>
+    <circle cx="44" r="30" stroke="yellow"/>
+    <circle cx="44" r="25" stroke="green"/>
+    <circle cx="44" r="20" stroke="blue"/>
+    <circle cx="44" r="15" stroke="purple"/>
+    </g>
+  </svg>
+</button>
 
 {% include "partials/themes.njk" %}
