@@ -68,7 +68,8 @@ img, svg, video {
 input, button, textarea, select,
 input[type="file"]::-webkit-file-upload-button {
   color: inherit;
-  font: inherit;
+  font-family: system-ui, sans-serif;
+  font-weight: normal;
   font-size: inherit;
   letter-spacing: inherit;
   word-spacing: inherit;
