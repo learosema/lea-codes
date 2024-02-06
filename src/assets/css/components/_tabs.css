@@ -20,7 +20,7 @@
   background: var(--tabs-tab-bg);
   color: var(--tabs-tab-fg);
   padding: .6em 1.2em;
-  font-family: inherit;
+  font-family: system-ui, sans-serif;
   transform: translateY(2px);
   margin: 0 0.5rem;
 }
