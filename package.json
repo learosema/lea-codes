@@ -10,7 +10,7 @@
     "lint:html": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html --filterfile .vnurc dist",
     "lint:css": "stylelint \"src/assets/css/**/*.css\"",
     "lint:js": "eslint eleventy.config.js src/assets/js",
-    "build": "cross-env NODE_ENV=production eleventy"
+    "build": "cross-env NODE_ENV=production PANGOCAIRO_BACKEND=fontconfig eleventy"
   },
   "repository": {
     "type": "git",

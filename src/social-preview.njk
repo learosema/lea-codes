@@ -46,7 +46,7 @@ eleventyExcludeFromCollections: true
 
   <!-- date -->
   <text
-    font-family="sans-serif"
+    font-family="serif"
     font-size="26"
     font-weight="700"
     style="filter: drop-shadow(4px 4px 0px {{ background }})"
@@ -61,12 +61,12 @@ eleventyExcludeFromCollections: true
   <!-- title -->
   <text
     id="text"
-    font-family="sans-serif"
+    font-family="'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif"
     font-size="80"
     font-weight="900"
     fill="{{ color }}"
     style="filter: drop-shadow(4px 4px 0px {{ background }})"
-    letter-spacing="-3"
+    letter-spacing="-1"
   >
     {% for line in titleInLines %}
     <tspan x="160" y="{{ verticalStartingPoint - 20 + loop.index0 * 80 }}">
