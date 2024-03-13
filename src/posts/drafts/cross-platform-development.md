@@ -5,6 +5,8 @@ tags:
  - build-tools
  - cross-platform development
 ---
+This is random gibberish written together. I have to sort things :)
+
 One thing I love about the web platform is that its cross-platform compatibility. Many (most) common operating system comes with a browser preinstalled. You can take a piece of HTML, CSS and JavaScript and it will work (mostly) everywhere.
 
 How does it work?
@@ -44,8 +46,7 @@ As you can already see, the build process slightly different from platform to pl
 
 As projects grow larger and pull in multiple dependencies, the build process can get more complex.
 
-Makefiles come to the rescue. You can define several build steps in a Makefile.
-The syntax of a Makefile is as follow:
+This is where Makefiles come in. You can define several steps for building a project there.
 
 ```sh
 hello:
@@ -66,36 +67,116 @@ Another common build step is one for cleaning up: `make clean` cleans up the fol
 
 In-depth tutorial on Makefiles: <https://opensource.com/article/18/8/what-how-makefile>
 
-### A Makefile for Watcom C
+## A common unix-like Makefile
 
 ```txt
-obj = hello.obj
-bin = hello.exe
+# Usage:
+# make        # compile all binary
+# make clean  # remove ALL binaries and objects
 
-CC = wcc
-CFLAGS = -zq
-LD = wlink
+.PHONY = all clean postbuild
 
-$(bin): $(obj)
-        $(LD) name $(bin) file { $(obj) }
+CC = owcc
 
-.c.obj:
-        $(CC) -fo=$@ $(CFLAGS) $<
+LINKERFLAG = -lm
 
-clean: .symbolic
-        del *.obj
-        del $(bin)
+SRCS := $(wildcard *.c)
+BINS := $(SRCS:%.c=%)
+
+all: ${BINS}
+
+postbuild:
+  @echo "Post build steps.."
+
+%: %.o
+  @echo "Checking.."
+  ${CC} ${LINKERFLAG} $< -o $@
+
+%.o: %.c
+  @echo "Creating object.."
+  ${CC} ${CFLAGS} -c $<
+
+clean:
+  @echo "Cleaning up..."
+  rm -rvf *.o ${BINS}
 ```
 
-When building with OpenWatcom C and MS-DOS, there are also differences in the Makefile. For example, `del` is used to delete files in DOS while `rm` is used to delete file in a UNIX-like OS. Also, the command line interface is different.
+- `PHONY` targets: all build targets that aren't files, can be used for additional build steps, such as `clean` or `postbuild` 
+- `%`: wildcard
+- `$@`,  `$<`, no idea yet, but used for inserting that above wildcard.
 
-## OWCC to the rescue
+https://stackoverflow.com/a/37701195/388201
 
-OpenWatcom v2 comes with `owcc` which has a command-line interface which is compatible to `gcc`.
+## Other formats?
+
+Yes, there are a bunch of other formats. For Example
+
+- Visual Studio Project Files
+- Watcom WMake
+- XCode
+- Ninja (used by Chromium)
+
+How do we overcome all these different formats?
+
+## CMake to the rescue
+
+CMake is a tool which can generate Makefiles in different formats in a way that it fits to your build environment.
+
+See <https://cmake.org/cmake/help/book/mastering-cmake/chapter/Why%20CMake.html>
+
+- Advantages: it works without having a bunch of unix tools installed (autoconf, m4, perl).
+- It can look for packages preinstalled on the system via `find_package`
+- It has a FetchContent extension, which can make it work a bit like `npm install`, where you can download and build dependencies for your project.
+
+```txt
+cmake_minimum_required(VERSION 3.28 FATAL_ERROR)
+project(fmttest LANGUAGES CXX)
+
+# add compilation flags
+set(CMAKE_CXX_STANDARD 20)
+# add_definitions(-DDATA_PATH="${PROJECT_SOURCE_DIR}/data")
+
+include(FetchContent)
+
+# download the project to be made part of the build
+# note: SOURCE_DIR and a local path to a project can be used instead
+# of GIT_REPOSITORY - this is very useful for local iterative development
+# if you are working on the libary and application together
+FetchContent_Declare(
+    fmtlib
+    GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+    GIT_TAG 10.2.1
+)
+# utility to setup the downloaded library for use
+FetchContent_MakeAvailable(fmtlib)
+
+# define targets
+add_executable(fmttest fmttest.cc)
+target_link_libraries(fmttest PRIVATE fmt::fmt)
+```
+
+See also the [full guide on dependencies in CMake](https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html).
+
+
+### Creating a WMAKE Makefile
+
+```sh
+cmake -G "Watcom WMake" -D CMAKE_SYSTEM_NAME=DOS
+```
 
 ## GNU autotools
 
-GNU systems such with GNU/Linux or Mingw come with build tools which can create platform
+GNU systems such with GNU/Linux or Mingw come with build tools which can create platform. This is very common in the GNU/Linux ecosystem.
+
+The process for building an autotools project is always like this:
+
+```sh
+configure
+make
+make install
+```
+
+The configure script runs a couple of tests and sets compiler definitions accordingly; this way it can be made compatible to different operating systems like Linux, BSD or Windows.
 
 In depth resources:
 
