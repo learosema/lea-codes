@@ -49,11 +49,13 @@ As projects grow larger and pull in multiple dependencies, the build process can
 This is where Makefiles come in. You can define several steps for building a project there.
 
 ```sh
+.PHONY: hello cleab
+
 hello:
   echo Hello Lea!
 
-compile:
-  touch output.txt
+output.o:
+  gcc output.c
 
 clean:
   rm output.txt
