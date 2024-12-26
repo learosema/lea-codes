@@ -6,6 +6,7 @@ schema: blog
   <div class="intro">
     <div class="flow wrapper">
       <h1>{{ title }}</h1>
+      {% if description %}<p>{{ description }}</p>{% endif %}
       {% set definedDate = date %} {% include "partials/date.njk" %}
       <p>by {% if author %}{{ author }}{% elseif meta.author %}{{ meta.author }}{% endif %}</p>
 
