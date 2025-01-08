@@ -120,7 +120,7 @@ Having tsc to check the JavaScript still helped me find certain problems where s
 
 For my js-only codebase, I went with this `tsconfig.json`, extending from a node22-preset. At the time of this writing, node 22 was the LTS version.
 
-```
+```sh
 npm install @tsconfig/node22 -D
 ```
 ```js
@@ -206,3 +206,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
+## Further Resources
+
+- [official JSDoc website](https://jsdoc.app)
+- [typedoc](https://typedoc.org)
+- [LinkedIn article about `--experimental-strip-types`](https://www.linkedin.com/posts/stefan-judis_todays-a-big-day-in-nodejs-land-v2360-activity-7282673654943911936-H3KU), by [Stefan Judis](https://stefanjudis.com), which inspired me writing this article
