@@ -23,13 +23,14 @@ You can additionally check the JavaScript code base by the typescript compiler.
 
 How does JSDoc-annotated code look like?
 
-```js
+```jsdoc
 /**
  * Poor girl's handlebars
  *
  * @param {string} content the template content
  * @param {Record<string, string>} [data] the data object
- * @param {TemplateConfig} [config] the template configuration, where you can specify additional filters available inside the template
+ * @param {TemplateConfig} [config] the template configuration, 
+ * where you can specify additional filters available inside the template
  * @returns {Promise<string>} the template result string
  */
 export async function template(content, data, config) {}
@@ -42,22 +43,18 @@ specified as optional via square brackets. Your code editor may auto-insert such
 Every built-in type you know from TypeScript is available. This includes primitives such as `string`, `number` `boolean` but also more complex object types.
 Object types can be defined using the `@typedef` directive. The definition of the `TemplateConfig` object looks like this:
 
-```js
+```jsdoc
 /**
  * @typedef TemplateConfig
  * Configuration object for the template() function.
- * @property {Map<string, Function>} [filters] map of additional filters to be used inside the template
+ * @property {Map<string, Function>} [filters] map of additional filters to be used
  */
 ```
 
 ## Interfaces?
 
-A thing loved by software architects and design pattern evangelists in programming languages are `interface`s. 
-
-Via interfaces, you can do loose coupling in your codebase. 
-Depend on interfaces, then inject your concrete dependencies at runtime. 
-This will ease testing your code via unit tests; you can replace complex 
-dependencies with mocks which always return the same result for a given test case.
+A thing loved by software architects and design pattern evangelists in programming languages are `interface`s, wich are often used in
+Software Design concepts such as [Dependency Injection](https://builtin.com/articles/dependency-injection#:~:text=Dependency%20injection%20is%20about%20injecting,and%20embracing%20loosely%20coupled%20code.).
 
 But JavaScript lacks interfaces. And JavaScript is often criticized due to that. 
 
@@ -71,14 +68,43 @@ interface FileResolver {
 ```
 
 It can be represented via JSDoc:
-```
+
+```jsdoc
 /**
  * @typeDef FileResolver
  * @property {(fileName: string) => Promise<string|Buffer>} loadFile
  */
 ```
 
-## Setting up typescript
+## Using types from other files
+
+Using types from other files is a bit tedious though.
+How would you reference a type from another file?
+
+Microsoft IntelliSense in Visual Studio and Visual Studio Code have a special syntax for it. 
+So called triple-slash-references:
+
+```js
+///<reference path="typedefs.js"/>
+```
+
+But jsdoc requires another syntax, which looks like this
+
+```js
+/**
+ * My setup function 
+ * @param {import("./typedefs.js").Configuration} [config] 
+ */
+function setup(config) {
+}
+```
+
+This works for me, but it's a bit verbose. You can use a combination of both: The triple-slash reference and the inline type imports.
+Unfortunately, I haven't found a simpler way yet.
+
+## Setting up TypeScript
+
+Let's have a look how you can use TypeScript in your project without writing TypeScript but JavaScript with JSDoc.
 
 First, install typescript as a devDependency.
 
@@ -119,6 +145,8 @@ npm install @tsconfig/node22 -D
 
 When I run `npx tsc` now, it would generate type declarations for all files in `src` and save them to `dist`. 
 
+## Auto-generate documentation
+
 Additionally, I even could run `typedoc` which generates a nice website with the API for me.
 I found this super helpful, so I built a Github action that builds and deploys it:
 
@@ -126,7 +154,7 @@ I found this super helpful, so I built a Github action that builds and deploys i
 npm install typedoc -D
 ```
 ```yaml
-# Simple workflow for deploying static content to GitHub Pages
+# .github/workflows/documentation.yaml:
 name: Deploy API Documentation to GitHub Pages
 
 on:
@@ -143,8 +171,9 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment,
+# skipping runs queued between the run in-progress and latest queued.
+# However, do not cancel in-progress runs.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -177,28 +206,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
-
-## Using types from other files
-
-Using types from other files is a bit tedious though.
-How would you reference a type from another file?
-
-Microsoft IntelliSense in Visual Studio and Visual Studio Code have a special syntax for it. 
-So called triple-slash-references:
-
-```js
-///<reference path="typedefs.js"/>
-```
-
-But jsdoc requires another syntax, which looks like this
-
-```js
-/**
- * My setup function 
- * @param {import("./typedefs.js").Configuration} [config] 
- */
-function setup(config) {
-}
-```
-
-This works for me, but it's a bit verbose. I haven't found a simpler way yet.
