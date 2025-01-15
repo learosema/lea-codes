@@ -1,6 +1,10 @@
 ---
 title: Meetups are for everyone
 date: 2025-01-15
+description: This is an article about underrepresented groups in tech and gatekeeping in communities.
+tags:
+  - communities
+  - diversity
 ---
 There is one thing I really like to do: going to and organizing meetups.
 
