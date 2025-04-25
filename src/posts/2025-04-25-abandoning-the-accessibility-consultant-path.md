@@ -26,7 +26,7 @@ Additionally, you probably won't get to building software anymore as an accessib
 
 In client work and enterprise contexts, accessibility is often about WCAG compliance, but not about really making the product as accessible as possible.
 
-A further point I really dislike the Fear marketing regarding the Accessibility Enforcement Act. This is a strategy some accessibility consultants run and it quite tells that it's about compliance rather than real accessibility improvement efforts.
+A further point I really dislike the Fear marketing regarding the European Accessibility Act. This is a strategy some accessibility consultants run and it quite tells that it's about compliance rather than real accessibility improvement efforts.
 
 ## Quo vadis Lea?
 
