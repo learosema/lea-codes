@@ -9,7 +9,7 @@ tags:
 There is one thing I really like to do: going to and organizing meetups.
 
 But it turns me off when such a space is exclusively open to "experts only".
-There are events that accept speaker proposals only when they are "experts". 
+There are events that accept speaker proposals only when they are "experts".
 
 Some events even limit the attendees to "expert-only" as well.
 
