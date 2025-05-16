@@ -53,6 +53,12 @@ dos_block_t dpmi_alloc_dos_block(uint32_t size)
     dblk.selector = regs.w.dx;
     return dblk;
 }
+#else
+// Stub for platforms other than dos, 
+// basically to make VSCode happy.
+#define dpmi_alloc_dos_block(size)
+#endif
+
 ```
 
 ## Why Go Through All This Trouble?
