@@ -61,10 +61,13 @@ For fonts! I wanted to use a custom font for my text-mode application. I designe
 
 The cool part: text-mode graphics and raster fonts are still a huge deal in the indie gamedev scene. There's something incredibly satisfying about pushing chunky pixels directly and seeing the result instantly on the screen.
 
+To feature a decent example, check out [Monogram](https://datagoblin.itch.io/monogram) and [DungeonMode](https://datagoblin.itch.io/dungeonmode) by [datagoblin](https://datagoblin.itch.io).
+
+Beautiful 8x8 raster fonts that makes you want to start building a roguelike RPG from scratch.
+
 ## What's the big picture?
 
-The big picture is to build a basic music application in textmode that runs everywhere, using the old OPL2 chip that was used in Ad Lib and soundblaster
-cards.
+The big picture is to build a basic music application in textmode that runs everywhere, using the old OPL2 chip that was used in Ad Lib and soundblaster cards.
 
 Why? Because my elder brother built a music application in the 90s
 in Pascal. It had MIDI support and everything!
