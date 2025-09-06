@@ -18,9 +18,9 @@ This can not only be used inside the fetch API but inside everything asynchronou
 ## Wait, Vanilla JavaScript has signals?
 
 Yes. But not the Angular kind. It's solely for aborting
-async operations and that's why it's called [`AbortSignal`]().
+async operations and that's why it's called [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal).
 
-It works like this: you create a new `AbortController`.
+It works like this: you create a new [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
 
 The controller exposes an `abort` method and a `signal`.
 The `signal` can be used to listen on `abort` events, via
