@@ -5,6 +5,8 @@ tags:
   - javascript
   - async
 date: 2025-09-07
+updates: 
+  - 2025-12-24 add the start/abort buttons in the example code to make it clear the signal is inside the AbortController
 ---
 This is a follow-up post about something I wrote on dev.to, 5 years ago:
 [Aborting a fetch request](https://dev.to/learosema/aborting-a-fetch-request-4pmb).
@@ -22,14 +24,14 @@ async operations and that's why it's called [`AbortSignal`](https://developer.mo
 
 It works like this: you create a new [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
 
-The controller exposes an `abort` method and a `signal`.
+The controller exposes an `abort` method and a `signal` property.
 The `signal` can be used to listen on `abort` events, via
 `signal.addEventListener`.
 
 ## Code Example
 
 ```js
-const abortController = new AbortController();
+let abortController = null;
 let counter = 1;
 
 async function loop(t = 0, signal) {
@@ -44,7 +46,25 @@ async function loop(t = 0, signal) {
 }
 
 abortButton.addEventListener("click", () => {
+  if (! abortController) return;
   abortController.abort();
+  abortController = null;
+});
+
+runButton.addEventListener("click", () => {
+  
+  if (abortController) return;
+  abortController = new AbortController();
+  counter = 1;
+  
+  // The abort signal is a property of 
+  // the AbortController, which we pass to the 
+  // async loop function. 
+  // We could even "await" it here, but as we
+  // don't do anything further afterwards, it can be a 
+  // fire and forget.
+  const abortSignal = abortController.signal;
+  loop(0, abortSignal);
 });
 ```
 
@@ -87,6 +107,20 @@ async function loop2(t = 0, signal) {
   console.log('restarting loop')
   window.setTimeout((t) => loop2(t, signal), 0);
 }
+
+runButton2.addEventListener("click", () => {
+  if (abortController2) return;
+  abortController2 = new AbortController();
+  counter2 = 1;
+  loop2(0, abortController2.signal);
+})
+
+abortButton2.addEventListener("click", () => {
+  if (! abortController2) return;
+  abortController2.abort();
+  abortController2 = null;
+});
+
 ```
 
 Check the full demo on [CodePen](https://codepen.io/learosema/pen/ByoMVzx?editors=0011).
