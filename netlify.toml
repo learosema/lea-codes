@@ -14,6 +14,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://lea.codes/posts/2026-01-15-an-eleventy-config-for-moving-from-github-pages/"
+  to = "https://lea.codes/posts/2026-01-15-an-eleventy-config-for-moving-from-jekyll/"
+  status = 301
+  force = true
+
 [build]
   command = "npm run build"
   publish = "dist"
