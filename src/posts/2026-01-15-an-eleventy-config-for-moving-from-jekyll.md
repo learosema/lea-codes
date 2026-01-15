@@ -120,8 +120,10 @@ At best, it's just an additional `.html` instead of a trailing
 slash. At worst, it gets very long and sprinkled with 
 hexacdecimal code sequences.
 
-But the usability point is also valid.
-In the end, it depends on your needs.
+But the usability point about relative markdown links in the git platform's file
+viewer is also valid.
+
+In the end, it depends on your and your users' needs.
 
 ## "But I want the nicer URLs?"
 
