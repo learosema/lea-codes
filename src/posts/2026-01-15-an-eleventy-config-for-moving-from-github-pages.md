@@ -30,7 +30,7 @@ GitHub made it pretty configuration-free and straightforward.
 
 Yes, to be fair, eleventy can do markdown configuration-free, too.
 
-But one thing I needed to change was the URL handling which is more like Jekyll.
+But one thing I needed to change was the URL handling to be more like Jekyll.
 Eleventy uses extension-free URLs, wich are pretty cool. They are the best whem
 it comes to end user usability (shorter, human-readable URLs). But that's not how
 Jekyll works.
