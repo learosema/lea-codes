@@ -168,7 +168,11 @@ article "an eleventy config for moving from GitHub Pages" before.
 
 This is a little misleading and baity, 
 as [Kristof Zerbe](https://lea.lgbt/@kiko@indieweb.social) pointed out.
+Also, as he mentioned, you can perfectly deploy an Eleventy site to GitHub.
+So, this is more about Jekyll, not about moving away from GitHub.
 
 I initially took this title because GitHub Pages integrated Jekyll so seamlessly.
+
 People might resist changing to other platform where
-they have to write an additional YAML file.
+they have to write an additional YAML file. So, this seamlessness could
+be something that stops them for migrating away from GitHub.
