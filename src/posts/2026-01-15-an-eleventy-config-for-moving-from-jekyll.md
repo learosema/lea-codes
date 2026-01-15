@@ -24,7 +24,7 @@ Markdown is automatically transformed to HTML with zero configuration.
 
 Moving off jekyll to Eleventy brings a couple advantages: it's super fast and adds
 more flexibility, like adding additional post-processing, using CSS-preprocessors
-like lightningcss, and it could probably you maybe more independent from GitHub.
+like lightningcss, and it could probably make you more independent from GitHub.
 
 To be fair, you can host Jekyll anywhere else, but
 GitHub made it pretty configuration-free and straightforward.
@@ -32,14 +32,15 @@ GitHub made it pretty configuration-free and straightforward.
 Yes, to be fair, eleventy can do markdown configuration-free, too.
 
 But one thing I needed to change was the URL handling, so it is more like in
-Jekyll.Eleventy uses extension-free URLs, wich are pretty cool. They are the best 
+Jekyll. Eleventy uses extension-free URLs, which are pretty cool. They are the best 
 when it comes to end-user usability (shorter, human-readable URLs).
 But that's not how Jekyll works.
 
 In my markdown files, I often use several relative links to other markdown files.
 Navigating these links from the github-repo-integrated file viewer works as well as
-on the published jekyll site, where the links are rewritten als `.html` links.
-I found this behaviour for my links pretty cool. I must admit this is
+on the published jekyll site, where the links are rewritten as `.html` links.
+
+I found this behaviour for my anchors pretty cool. I must admit this is
 more a "developer experience" feature.
 
 Anyways, a struggle to move off Jekyll to Eleventy could be a missing `eleventy.config.js`
