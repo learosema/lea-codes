@@ -64,7 +64,7 @@ Further formatting inside the h1 isn't processed.
 
 You could add that with a few further regular expressions, like I did with my
 non-complete [mini-markdown implementation](https://github.com/sissijs/sissi/blob/main/src/transforms/markdown.js), or just use a complete markdown parser like
-`markdown-it` at that point :). Somehow I refuse to do that because
+`markdown-it` at that point. Somehow I refuse to do that because
 Eleventy already does that at the template processing point, as that could have a
 bigger performance impact.
 
@@ -88,6 +88,13 @@ if (data.page.inputPath?.endsWith('.html')) {
 
 In my use-case, handling the markdown headline with the
 above regex was sufficient.
+
+## Drawback
+
+The drawback is performance.
+It is an additional parsing step in the build.
+
+This is probably fine for my smaller website.
 
 ## Why?
 
