@@ -1,5 +1,5 @@
 ---
-title: Eleventy: Autopopulating the title variable from the template
+title: "Eleventy: Autopopulating the title variable from the template"
 date: 2026-01-16
 tags:
   - eleventy
