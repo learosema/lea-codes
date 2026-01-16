@@ -40,8 +40,7 @@ The raw input is the unprocessed unparsed template body
 minus the template's frontmatter.
 
 So, you can provide a computed title variable.
-In case of markdown, it is parsed via a regular expression, in case of HTML,
-linkedom is used (a fast DOM parser API):
+When the input file format is markdown, it is parsed via a regular expression:
 
 ```js
 import { parseHTML } from 'linkedom'
@@ -58,8 +57,8 @@ eleventyConfig.addGlobalData("eleventyComputed.title", () => {
 })
 ```
 
-This only works for markdown though. In theory, you could also handle
-other formats, for example HTML.
+This is specofic to markdown though. In theory, you could also handle
+other formats, for example HTML:
 
 ```js
 import { parseHTML } from 'linkedom'
