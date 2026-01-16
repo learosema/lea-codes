@@ -90,3 +90,9 @@ if (data.page.inputPath?.endsWith('.html')) {
 
 In my use-case, handling the markdown headline with the
 above regex was sufficient.
+
+## Why?
+
+This was a side-quest for my try to migrate a site from Jekyll to GitHub which
+provided the title via a single hash sign (`#`). While Jekyll populated the
+title variable from it, Eleventy didn't do this (subtle feature request? ☺️)
