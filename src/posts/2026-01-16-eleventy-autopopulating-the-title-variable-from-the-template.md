@@ -45,8 +45,6 @@ So, you can provide a computed title variable.
 When the input file format is markdown, it is parsed via a regular expression:
 
 ```js
-import { parseHTML } from 'linkedom'
-
 eleventyConfig.addGlobalData("eleventyComputed.title", () => {
   return (data) => {
     if (data.page.inputPath?.endsWith('.md')) {
