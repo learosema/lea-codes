@@ -98,7 +98,7 @@ title variable from it, Eleventy didn't do this (subtle feature request? ☺️)
 ## Drawback
 
 The drawback is performance.
-It is an additional parsing step in the build for each markdown file. 
+It is an additional parsing step in the build for each markdown file.
 
 This is probably fine for my smaller website.
 But I guess this could quickly add up for the larger sites, so I
