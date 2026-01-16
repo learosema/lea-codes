@@ -64,7 +64,7 @@ eleventyConfig.addGlobalData("eleventyComputed.title", () => {
 This is specific to markdown though. Also, it isn't perfect.
 Further formatting inside the h1 isn't processed.
 
-You could add that a few further regular expressions, like I did with my
+You could add that with a few further regular expressions, like I did with my
 non-complete [mini-markdown implementation](https://github.com/sissijs/sissi/blob/main/src/transforms/markdown.js), or just use a complete markdown parser like
 `markdown-it` at that point :). Somehow I refuse to do that because
 Eleventy already does that at the template processing point, as that could have a
