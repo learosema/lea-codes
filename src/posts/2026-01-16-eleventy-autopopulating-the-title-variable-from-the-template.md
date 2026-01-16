@@ -93,7 +93,7 @@ above regex was sufficient.
 
 This was a side-quest for my try to migrate a site from Jekyll to Eleventy which
 provided the title via a single hash sign (`#`). While Jekyll populated the
-title variable from it, Eleventy didn't do this (subtle feature request? ☺️)
+title variable from it, Eleventy didn't do this.
 
 ## Drawback
 
@@ -101,8 +101,7 @@ The drawback is performance.
 It is an additional parsing step in the build for each markdown file.
 
 This is probably fine for my smaller website.
-But I guess this could quickly add up for the larger sites, so I
-would understand a "wontfix".
+But I guess this could quickly add up for the larger sites.
 
-The long-term fix would be to update all my files to the frontmatter
-format. But my brain hates chore tasks.
+My long-term fix for this would be to update all
+my files to the frontmatter format. But my brain hates chore tasks.
