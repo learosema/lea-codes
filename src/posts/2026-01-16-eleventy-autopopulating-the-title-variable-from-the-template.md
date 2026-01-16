@@ -28,7 +28,7 @@ It's less verbose:
 Lorem ipsum is a pretty cool dummy text dolor sit amet.
 ```
 
-This has the downside that there is no title variable 
+This has the downside that there is no title variable
 populated which I can reuse to fill my `<title>` tag in my
 layout file.
 
