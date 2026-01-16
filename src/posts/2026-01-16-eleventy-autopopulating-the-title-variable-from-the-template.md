@@ -14,7 +14,7 @@ For example, this looks like in the following code snippet:
 ---
 title: Hello world!
 ---
-# \{\{ title \}\}
+# {{{ title }}}
 
 Lorem ipsum is a pretty cool dummy text dolor sit amet.
 ```
