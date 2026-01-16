@@ -11,9 +11,9 @@ the template.
 For example, this looks like in the following code snippet:
 
 ```md
----
-title: Hello world!
----
+\---
+title\: Hello World!
+\---
 # {{{ title }}}
 
 Lorem ipsum is a pretty cool dummy text dolor sit amet.
@@ -57,8 +57,21 @@ eleventyConfig.addGlobalData("eleventyComputed.title", () => {
 })
 ```
 
-This is specofic to markdown though. In theory, you could also handle
-other formats, for example HTML:
+This is specific to markdown though. Also, it isn't perfect.
+
+Further formatting inside the h1 isn't processed.
+
+You could add that a few further regular expressions, like I did with my
+non-complete [mini-markdown implementation](https://github.com/sissijs/sissi/blob/main/src/transforms/markdown.js), or just use a complete markdown parser like
+`markdown-it` at that point :). Somehow I refuse to do that because
+Eleventy already does that at the template processing point, as that could have a
+bigger performance impact.
+
+For other formats and/or more advanced use-cases,
+you could also combine it with an HTML parser,
+like [linkedom](https://github.com/WebReflection/linkedom).
+I'm in love with that library; it's great for
+server-side HTML processing.
 
 ```js
 import { parseHTML } from 'linkedom'
@@ -70,4 +83,5 @@ if (data.page.inputPath?.endsWith('.html')) {
 }
 ```
 
-In my use-case, handling markdown inputs was sufficient.
+In my use-case, handling the markdown headline with the
+above regex was sufficient.
