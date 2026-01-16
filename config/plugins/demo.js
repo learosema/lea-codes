@@ -1,7 +1,7 @@
-const { readFile } = require('fs/promises');
-const meta = require('../../src/_data/meta');
-const path = require('path');
-const fm = require('front-matter');
+import { readFile } from 'fs/promises';
+import meta from '../../src/_data/meta.js';
+import path from 'path';
+import fm from 'front-matter';
 
 const figureTemplate = ({src, title, description}) => `
 <figure class="demo-figure">
@@ -14,7 +14,7 @@ const figureTemplate = ({src, title, description}) => `
 `.trim();
 
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addShortcode('demo', async (src) => {
     const localPath = path.join('./src/demos', src + '.html');
     const content = await readFile(localPath, 'utf8');

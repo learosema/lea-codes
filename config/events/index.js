@@ -1,7 +1,7 @@
-const svgToJpeg = require('./svg-to-jpeg.js');
-const demoCodeviews = require('./demo-codeviews.js');
+import svgToJpeg from './svg-to-jpeg.js';
+import demoCodeviews from './demo-codeviews.js';
 
-module.exports = {
+export {
   svgToJpeg,
   demoCodeviews,
 };

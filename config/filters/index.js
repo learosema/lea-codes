@@ -1,11 +1,11 @@
-const array = require('./array');
-const formatDate = require('./formatdate');
-const isoDate = require('./isodate');
-const limit = require('./limit');
-const minify = require('./minify');
-const where = require('./where');
-const splitLines = require('./splitlines');
-const slugify = require('./slugify');
+import array from './array.js';
+import formatDate from './formatdate.js';
+import isoDate from './isodate.js';
+import limit from './limit.js';
+import minify from './minify.js';
+import where from './where.js';
+import splitLines from './splitlines.js';
+import slugify from './slugify.js';
 
 const filterPlugin = (eleventyConfig) => {
   eleventyConfig.addFilter('array', array);
@@ -22,7 +22,7 @@ const filterPlugin = (eleventyConfig) => {
   eleventyConfig.addFilter('json', JSON.stringify);
 };
 
-module.exports = {
+export {
   formatDate,
   isoDate,
   limit,

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   url: process.env.URL || '',
   siteName: "Lea's Blog",
   siteDescription: "This is the blog of Lea Rosema, frontend developer with accessibility focus, based in Hamburg",

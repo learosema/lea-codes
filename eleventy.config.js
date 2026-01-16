@@ -1,20 +1,19 @@
-const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight');
+import syntaxHighlightPlugin from '@11ty/eleventy-plugin-syntaxhighlight';
+import rssPlugin from '@11ty/eleventy-plugin-rss';
+import { EleventyRenderPlugin } from '@11ty/eleventy';
 
-const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const { EleventyRenderPlugin } = require('@11ty/eleventy');
+import esbuildPlugin from './config/plugins/esbuild.js';
+import lightningCSSPlugin from './config/plugins/lightning-css.js';
+import htmlTransformPlugin from './config/plugins/html-transform.js';
+import imagePlugin from './config/plugins/image.js';
+import demoPlugin from './config/plugins/demo.js';
 
-const esbuildPlugin = require('./config/plugins/esbuild');
-const lightningCSSPlugin = require('./config/plugins/lightning-css');
-const htmlTransformPlugin = require('./config/plugins/html-transform');
-const imagePlugin = require('./config/plugins/image');
-const demoPlugin = require('./config/plugins/demo');
-
-const { filterPlugin } = require('./config/filters/index');
+import { filterPlugin } from './config/filters/index.js';
 
 // module import events
-const { svgToJpeg, demoCodeviews } = require('./config/events/index.js');
+import { svgToJpeg, demoCodeviews } from './config/events/index.js';
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   // custom watch targets
   eleventyConfig.addWatchTarget('./src/assets');
 
@@ -50,7 +49,7 @@ module.exports = (eleventyConfig) => {
   });
 
   // build events
-  eleventyConfig.on('afterBuild', () => {
+  eleventyConfig.on('eleventy.after', () => {
     svgToJpeg();
     demoCodeviews();
   });

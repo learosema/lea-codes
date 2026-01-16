@@ -1,7 +1,7 @@
-const { readdir, readFile, writeFile, mkdir } = require('fs/promises');
-const path = require('path');
-const fm = require('front-matter');
-const Prism = require('prismjs');
+import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
+import path from 'node:path';
+import fm from 'front-matter';
+import Prism from 'prismjs'
 
 const CSS_PATH = './dist/assets/css/codeview.css';
 const DEMOS_SRC_PATH = './src/demos';
@@ -25,7 +25,7 @@ const codeTemplate = (title, description, code, css, lang = 'markup') => `<!doct
 </body>
 </html>`.trim();
 
-module.exports = async function () {
+export default async function () {
   const css = await readFile(CSS_PATH, 'utf8');
   const files = await readdir(DEMOS_SRC_PATH);
   for (const file of files) {

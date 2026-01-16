@@ -11,10 +11,10 @@ the template.
 For example, this looks like in the following code snippet:
 
 ```md
-\---
-title\: Hello World!
-\---
-# {{{ title }}}
+---
+title: Hello World
+---
+# {{ "{{ title }}" }}
 
 Lorem ipsum is a pretty cool dummy text dolor sit amet.
 ```
@@ -31,6 +31,8 @@ Lorem ipsum is a pretty cool dummy text dolor sit amet.
 This has the downside that there is no title variable
 populated which I can reuse to fill my `<title>` tag in my
 layout file.
+
+## Using an eleventyComputed variable as title
 
 So, I found a way to make that work via an eleventyComputed.
 Since version 3, eleventy provides the raw input in the
@@ -57,8 +59,9 @@ eleventyConfig.addGlobalData("eleventyComputed.title", () => {
 })
 ```
 
-This is specific to markdown though. Also, it isn't perfect.
+## Further considerations
 
+This is specific to markdown though. Also, it isn't perfect.
 Further formatting inside the h1 isn't processed.
 
 You could add that a few further regular expressions, like I did with my
@@ -66,6 +69,8 @@ non-complete [mini-markdown implementation](https://github.com/sissijs/sissi/blo
 `markdown-it` at that point :). Somehow I refuse to do that because
 Eleventy already does that at the template processing point, as that could have a
 bigger performance impact.
+
+## Other formats and advanced use-cases
 
 For other formats and/or more advanced use-cases,
 you could also combine it with an HTML parser,

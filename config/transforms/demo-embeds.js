@@ -1,9 +1,9 @@
-const path = require('path');
-const {readFile} = require('fs/promises');
-const vanillaH = require('vanillah');
-const htm = require('htm');
-const Prism = require('prismjs');
-const fm = require('front-matter');
+import path from 'path';
+import { readFile } from 'fs/promises';
+import vanillaH from 'vanillah';
+import htm from 'htm';
+import Prism from 'prismjs';
+import fm from 'front-matter';
 const slugify = text => text.trim().toLowerCase().replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s/g, '-');
 
 const tabs = ({title, selected = 'code', code, href}) => {
@@ -26,7 +26,7 @@ const tabs = ({title, selected = 'code', code, href}) => {
 </div>`
 };
 
-module.exports = async function ({document}) {
+export default async function ({document}) {
   const html = htm.bind(vanillaH(document));
   const anchors = document.querySelectorAll('.demo-figure__link a');
   const replaces = [];

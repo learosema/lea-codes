@@ -32,4 +32,4 @@ const prng = {
   }
 };
 
-module.exports = prng;
+export default prng;

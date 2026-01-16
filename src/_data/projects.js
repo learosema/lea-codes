@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     title: 'Maths',
     description: 'A work in progress collection about various maths topics, primarily linear algebra.',

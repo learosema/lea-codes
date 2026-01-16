@@ -1,8 +1,8 @@
-const Image = require("@11ty/eleventy-img");
-const path = require('path');
+import Image from "@11ty/eleventy-img";
+import path from 'path';
 
 // Only one module.exports per configuration file, please!
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addShortcode("image", async function (src, alt, sizes = "(min-width: 888px) 862px, calc(100vw - 24px)", classes = "") {
     const urlPath = '/assets/images';
     const fullSrc = path.join('./src', urlPath, src);
