@@ -70,6 +70,11 @@ This is not a one-fits-all solution and probably needs some work to make it one.
 But that's fine for me, as of current. It doesn't need to be a one-fits-all-solution.
 YAGNI maybe.
 
+Also, one tricky part is getting from the hrefs to something that identifies the items in the collection correctly. I used the inputPath and prepended my base directory to the `href`. Also, my URLs in the TOC are all relative. I use a custom permalink setting where I just do relative links to markdown files which are post-processed from .md to .html afterwards :).
+
+In the default eleventy config, this needs to be adjusted. You could
+use the `filePathStem` property and prepend the base URL there.
+
 It can only handle markdown and the path to the TOC file is hardcoded.
 
 To make it more agnostic to the inut file format, you could process the input once and
