@@ -13,7 +13,7 @@ Right now, I'm building more of a knowledgebase/book kind of thing.
 And `date` is not the most important criteria to sort all articles.
 Though, it's still useful to display the most recent edited articles at some place.
 
-So, I wanted my collection to be the in the same
+Nevertheless, I wanted my collection to be the in the same
 order as they occur in my table of content file.
 Which happens to be the root `src/index.md`
 in my case.
@@ -54,21 +54,15 @@ async function createSortedCollection(eleventyConfig) {
 
 You can add this to the Eleventy config via `eleventyConfig.addPlugin(createSortedCollection)`.
 
-Then, I can put "previous" and "next" links onto my page.
+Then, I can put "previous" and "next" links onto my pages.
 
-```njk
-{% set previousLink = collections.toc | getPreviousCollectionItem %}
-{% set nextLink = collections.toc | getNextCollectionItem %}
+I use this on a german study site where I prepare myself for a certification,
+the Certified Professional User Experience, Foundation Level. I had the need to transfer it to a simpler-language version and provide it in HTML. There's a PDF for learning, but I failed learning from it, due to complex sentences and me being demotivated quickly when
+dealing with PDFs.
 
-{% if previousLink %}Previous: <a href="{{ previousLink.url }}">{{ previousLink.data.title }}</a>{% endif %}
-{% if nextLink %}Next: <a href="{{ nextLink.url }}">{{ nextLink.data.title }}</a>{% endif %}
-```
+The site is <https://learosema.github.io/cpux-prep/>, in german. The little prev next links at the bottom of the page are driven by the above TOC collection:
 
-I use this on a german site where I prepare myself for the Certified Professional User Experience, Foundation Level. I had the need to transfer it to a simpler-language version and provide it in 
-HTML. Way more comfortable than having to deal with PDFs.
-
-The site is <https://learosema.github.io/cpux-prep/>, in german. The little prev next links at the bottom
-are driven by the above TOC collection.
+<https://github.com/learosema/cpux-prep/blob/main/src/_layouts/default.njk#L35>
 
 ## Caveats
 
@@ -79,7 +73,7 @@ YAGNI maybe.
 It can only handle markdown and the path to the TOC file is hardcoded.
 
 To make it more agnostic to the inut file format, you could process the input once and
-then process the output html file via a DOM parser library. 
+then process the output html file via a DOM parser library.
 
 Have I mentioned that I find [linkedom](https://github.com/WebReflection/linkedom) pretty great
 for server-side HTML processing tasks?
