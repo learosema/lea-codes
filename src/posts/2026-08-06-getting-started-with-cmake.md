@@ -14,15 +14,14 @@ dependencies (`find_package`, git submodules, `FetchContent`).
 
 Usually, I'm a web developer with a focus on web standards and accessibility, but from time to time I return to my roots in C/C++.
 
-It's what I grew up with, and I still enjoy coding for
-retro platforms that Rust hasn't reached yet.
+It's what I grew up with, and I still enjoy coding in C, C++ or a combination of both.
 
-Going beyond HelloWorld in C/C++ is where it gets hard: how do you build a project with more
-than one file, manage dependencies, and keep it cross-platform? I've used Turbo C++, WATCOM,
-Visual Studio, and free tools like gcc and MinGW over the years, and every one of them handled multi-file projects differently.
+Going beyond HelloWorld in C/C++ is where it gets hard. How do you build a project with more
+than one file, manage dependencies, and keep it cross-platform? I've used Visual Studio and
+free software like gcc and MinGW over the years, and every one of them handled multi-file
+projects differently.
 
-Even "standard" unix-style Makefiles aren't that standard.
-WATCOM had its own dialect, Visual C++ shipped nmake, and Windows/Linux never quite agreed.
+Even "standard" unix-style Makefiles aren't that standard. Some include platform-specific shell commands.
 
 ## Build systems
 
@@ -35,10 +34,10 @@ Before getting to CMake, it's worth being clear about what a build system actual
 
 A few common ones:
 
-- **Make**, driven by Makefiles, the classic unix tool
-- **Ninja**, a newer and faster alternative to Make, optimized for speed rather than convenience
-- **MSBuild**, what Visual Studio projects use under the hood
-- **Xcode's build system**, for Apple platforms
+- Make, driven by Makefiles, the classic unix tool
+- Ninja, a newer and faster alternative to Make
+- MSBuild, what Visual Studio projects use
+- Xcode, for Apple platforms
 
 Each of these has its own file format and its own quirks, as you've probably guessed from
 the tooling history above. If you wanted one project to build with Make on Linux, MSBuild on
@@ -47,10 +46,7 @@ build files.
 
 ## CMake
 
-That's the problem CMake was built to solve. CMake itself is not a build system, it's a
-build system *generator*: you describe your project once, in a `CMakeLists.txt`, and CMake
-generates the Makefile, the Ninja files, or the Visual Studio solution for you, depending on
-your toolchain.
+That's the problem CMake was built to solve.
 
 I picked CMake for my own projects because, out of all the generators out there, it seems to
 be the one that most C/C++ projects converge on nowadays. A lot of C/C++ open source projects
@@ -87,6 +83,37 @@ The first command generates the build files (a Makefile, a Ninja file, or a Visu
 solution, depending on your toolchain) into a `build` folder. The second one invokes that
 underlying build tool for you, so you don't need to remember whether it's `make`, `ninja`
 or something else.
+
+### CMakePresets.json
+
+Configuring `cmake` by passing parameters on the command line works fine for small projects, but that command
+line grows fast, and grows differently on every platform. 
+
+`CMakePresets.json` lets you name a configuration once and share it via a file
+that lives next to your `CMakeLists.txt`, instead of everyone pasting their own `cmake -B
+build -G Ninja -DCMAKE_BUILD_TYPE=Debug ...` into a README.
+
+```json
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "default",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ]
+}
+```
+
+With that in place, `cmake --preset default` and `cmake --build --preset default` replace
+the manual flags, and everyone (and every CI job) configures the project the same way. See
+the [CMakePresets.json reference](https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html)
+for the full schema, and Martin Fieber's [CMake Presets](https://martin-fieber.de/blog/cmake-presets/)
+post linked below for a more hands-on walkthrough.
 
 ## Multiple folders
 
@@ -152,7 +179,10 @@ git pull --recurse-submodules
 git clone --recurse-submodules <url>
 ```
 
-I found them pretty cumbersome to use.
+They pin an exact commit, keep the dependency inside your own repo history, and work offline
+once cloned. But every contributor has to remember `--recurse-submodules`, and forgetting it
+is a classic source of "why is this header missing" confusion. I found them pretty cumbersome
+to use.
 
 ### Downloading the packages
 
@@ -184,7 +214,13 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(fmt SDL3 googletest)
+
+add_executable(HelloWorld main.cpp)
+target_link_libraries(HelloWorld PRIVATE fmt::fmt SDL3::SDL3)
 ```
+
+Once `FetchContent_MakeAvailable` has run, the fetched targets behave just like anything
+found via `find_package` — link them the same way with `target_link_libraries`.
 
 But having to download a package from git is not cool when you have poor internet connectivity.
 The `find_package` command is better in that case.
@@ -208,7 +244,16 @@ A good place to start is the official CMake website. It contains a tutorial to g
 Another resource that was particularly helpful was the blog by [Martin Fieber](https://martin-fieber.de), 
 who provides very good in-depth articles covering CMake. Martin also provides application starters on the GitHub repository.
 
+If you want to go deeper, [Sinem Akinci](https://devblogs.microsoft.com/cppblog/author/sinemakinci/) writes
+the CMake Tools extension release notes on the Microsoft C++ blog, which is where Presets support in VS Code
+actually gets documented as it evolves. And [Nicole Mazzuca](https://www.kdab.com/why-we-love-and-hate-cmake-video/)'s
+talk "Why We Love and Hate CMake" is a good watch for where CMake's rough edges are heading — she's also
+behind [Rho](https://github.com/remarkable/rho-oss), a library that tries to make CMakeLists.txt files
+less painful to write.
+
 - [CMake website](https://cmake.org)
 - [Martin Fieber: CMake & CPack for cross-platform distributables](https://martin-fieber.de/blog/cmake-cpack-cross-platform-distributables/)
 - [Martin Fieber: Basic C++ setup with dependency management in CMake](https://martin-fieber.de/blog/basic-cpp-setup-with-dependency-management/)
 - [Martin Fieber: CMake Presets](https://martin-fieber.de/blog/cmake-presets/)
+- [Sinem Akinci: Visual Studio Code CMake Tools Extension 1.21 Release (CMake Presets v10 and more)](https://devblogs.microsoft.com/cppblog/visual-studio-code-cmake-tools-extension-1-21-release-multi-root-improvements-cmake-presets-v10-and-more/)
+- [Nicole Mazzuca: Why We Love and Hate CMake](https://www.kdab.com/why-we-love-and-hate-cmake-video/)
