@@ -187,7 +187,7 @@ to use.
 ### Downloading the packages
 
 For the third option (download the library), CMake provides `FetchContent`. It is kind of a package downloading tool,
-and it's not to be confused with actual C++ package managers like vcpkg or Conan — `FetchContent` just pulls source
+and it's not to be confused with actual C++ package managers like vcpkg or Conan. `FetchContent` just pulls source
 from git and builds it alongside your project. It works like this:
 
 ```cmake
@@ -235,7 +235,7 @@ I really like the approach of using FetchContent combined with the parameter to 
 ## CMake resources
 
 CMake is cool, but it took me some time to understand it. 
-In this blog article, I scratched the surface — I haven't even touched CTest or CPack, 
+In this blog article, I scratched the surface. I haven't even touched CTest or CPack, 
 CMake's built-in tools for testing and packaging. Maybe a topic for a future post.
 
 A good place to start is the official CMake website. It contains a tutorial to get you started.
@@ -245,7 +245,7 @@ who provides very good in-depth articles covering CMake. Martin also provides ap
 If you want to go deeper, [Sinem Akinci](https://devblogs.microsoft.com/cppblog/author/sinemakinci/) writes
 the CMake Tools extension release notes on the Microsoft C++ blog, which is where Presets support in VS Code
 actually gets documented as it evolves. And [Nicole Mazzuca](https://www.kdab.com/why-we-love-and-hate-cmake-video/)'s
-talk "Why We Love and Hate CMake" is a good watch for where CMake's rough edges are heading — she's also
+talk "Why We Love and Hate CMake" is a good watch for where CMake's rough edges are heading. She's also
 behind [Rho](https://github.com/remarkable/rho-oss), a library that tries to make CMakeLists.txt files
 less painful to write.
 
