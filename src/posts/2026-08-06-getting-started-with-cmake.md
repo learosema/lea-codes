@@ -39,17 +39,17 @@ A few common ones:
 - MSBuild, what Visual Studio projects use
 - Xcode, for Apple platforms
 
-Each of these has its own file format and its own quirks, as you've probably guessed from
-the tooling history above. If you wanted one project to build with Make on Linux, MSBuild on
-Windows and Xcode on macOS, you'd have to hand-maintain three completely different sets of
-build files.
+Each of these has its own file format and its own quirks. If you wanted one project to build with Make on Linux, MSBuild on
+Windows and Xcode on macOS, you'd have to hand-maintain three completely different sets of build files.
 
 ## CMake
 
-That's the problem CMake was built to solve.
+That's where CMake comes into play.
 
-I picked CMake for my own projects because, out of all the generators out there, it seems to
-be the one that most C/C++ projects converge on nowadays. A lot of C/C++ open source projects
+I picked CMake for my own projects because it seems to
+be the one that most C/C++ projects converge on nowadays. 
+
+A lot of C/C++ open source projects
 use it, and I think it has become a de-facto standard for open-source libraries.
 
 Also, CMake is a Turing-complete language itself, and it comes with if/then/else, variables, functions and all
