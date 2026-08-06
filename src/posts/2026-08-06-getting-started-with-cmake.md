@@ -220,7 +220,8 @@ target_link_libraries(HelloWorld PRIVATE fmt::fmt SDL3::SDL3)
 ```
 
 Once `FetchContent_MakeAvailable` has run, the fetched targets behave just like anything
-found via `find_package` — link them the same way with `target_link_libraries`.
+found via `find_package`.
+It adds the library and include path to the project. You can link them via `target_link_libraries`, as usual.
 
 But having to download a package from git is not cool when you have poor internet connectivity.
 The `find_package` command is better in that case.
@@ -229,10 +230,7 @@ Since version 3.24, CMake integrated `find_package` into FetchContent via `FIND_
 the official package name differs from what you provided as name in `FetchContent_Declare`. `CONFIG` tells it to look for a configuration
 CMake file (eg. `SDL3Config.cmake`).
 
-None of these three approaches is strictly "the right one" — which you reach for depends on
-how your users will build the project, and how reliable their internet connection is. I tend
-to start with `find_package`, and fall back to `FetchContent` for anything that isn't
-packaged for the platform I'm targeting.
+I really like the approach of using FetchContent combined with the parameter to look for a pre-built version of the package.
 
 ## CMake resources
 
