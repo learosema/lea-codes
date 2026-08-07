@@ -244,7 +244,11 @@ CMake's built-in tools for testing and packaging. Maybe a topic for a future pos
 
 A good place to start is the official CMake website. It contains a tutorial to get you started.
 Another resource that was particularly helpful was the blog by [Martin Fieber](https://martin-fieber.de), 
-who provides very good in-depth articles covering CMake. Martin also provides application starters on the GitHub repository.
+who provides very good in-depth articles covering CMake. 
+
+Martin also provides application starters on [GitHub](https://github.com/MartinHelmut/), where he integrates
+libraries like SDL, Dear ImGui and fmt. It is far more complete than this introductory article, as it contains
+testing, app icon design starters, packaging and building installers. The projects are super nicely documented. 
 
 If you want to go deeper, [Sinem Akinci](https://devblogs.microsoft.com/cppblog/author/sinemakinci/) writes
 the CMake Tools extension release notes on the Microsoft C++ blog, which is where Presets support in VS Code
