@@ -6,6 +6,8 @@ tags:
   - build-system
   - package-management
 ---
+<strong>WIP. Article needs work. It has a couple rough edges. It is really bad in the current state</strong>
+
 **TL;DR:** CMake isn't a build system, it's a build system *generator*. You describe your
 project once in a `CMakeLists.txt`, and it generates Makefiles, Ninja files, or a Visual
 Studio solution for you. This post covers the basics: a minimal `CMakeLists.txt`, wiring up
