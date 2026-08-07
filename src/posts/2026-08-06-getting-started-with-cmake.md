@@ -6,24 +6,17 @@ tags:
   - build-system
   - package-management
 ---
-<strong>WIP. Article needs work. It has a couple rough edges. It is really bad in the current state</strong>
+Usually, I'm a web developer with a focus on web standards and accessibility, 
+but from time to time I write C++ or even C code.
 
-**TL;DR:** CMake isn't a build system, it's a build system *generator*. You describe your
-project once in a `CMakeLists.txt`, and it generates Makefiles, Ninja files, or a Visual
-Studio solution for you. This post covers the basics: a minimal `CMakeLists.txt`, wiring up
-multi-folder projects with `target_link_libraries`, and the three ways to pull in
-dependencies (`find_package`, git submodules, `FetchContent`).
+It's what I grew up with and still enjoy.
+Yet, going beyond small programs is often where I struggle. 
 
-Usually, I'm a web developer with a focus on web standards and accessibility, but from time to time I return to my roots in C/C++.
+How do I build a project with more than one file? How do I manage dependencies?
+How does cross-platform development work? There are differences between Windows
+and UNIX-like environments. Also, different compilers use different project formats.
 
-It's what I grew up with, and I still enjoy coding in C, C++ or a combination of both.
-
-Going beyond HelloWorld in C/C++ is where it gets hard. How do you build a project with more
-than one file, manage dependencies, and keep it cross-platform? I've used Visual Studio and
-free software like gcc and MinGW over the years, and every one of them handled multi-file
-projects differently.
-
-Even "standard" unix-style Makefiles aren't that standard. Some include platform-specific shell commands.
+That's where CMake comes into play.
 
 ## Build systems
 
@@ -46,19 +39,20 @@ Windows and Xcode on macOS, you'd have to hand-maintain three completely differe
 
 ## CMake
 
-That's where CMake comes into play.
+As I said, CMake tries to solve this problem. It doesn't build the project itself, 
+it generates the makefiles for you.
 
-I picked CMake for my own projects because it seems to
+I use CMake for my own projects because it seems to
 be the one that most C/C++ projects converge on nowadays. 
 
 A lot of C/C++ open source projects
 use it, and I think it has become a de-facto standard for open-source libraries.
 
 Also, CMake is a Turing-complete language itself, and it comes with if/then/else, variables, functions and all
-those things. That makes it a rabbit hole and you happen to debug your CMakeLists.txt from time to time.
+those things. Though, that's not necessarily an advantage. It makes it pretty powerful, but it makes it a rabbit hole and you happen to debug your CMakeLists.txt from time to time.
 
 There are other generators such as Meson, which is simpler and whose slogan is "non-Turing-complete". 
-I haven't tried it yet.
+I haven't tried it yet. CMake even comes with a Meson generator.
 
 ## CMake HelloWorld
 
@@ -205,14 +199,14 @@ FetchContent_Declare(
   SDL3
   GIT_REPOSITORY "https://github.com/libsdl-org/SDL.git"
   GIT_TAG release-3.4.4
-  FIND_PACKAGE_ARGS CONFIG
+  FIND_PACKAGE_ARGS CONFIG GLOBAL
 )
 
 FetchContent_Declare(
   googletest
   GIT_REPOSITORY https://github.com/google/googletest.git
   GIT_TAG        703bd9caab50b139428cea1aaff9974ebee5742e # release-1.10.0
-  FIND_PACKAGE_ARGS NAMES GTest
+  FIND_PACKAGE_ARGS NAMES GTest GLOBAL
 )
 
 FetchContent_MakeAvailable(fmt SDL3 googletest)
@@ -228,11 +222,19 @@ It adds the library and include path to the project. You can link them via `targ
 But having to download a package from git is not cool when you have poor internet connectivity.
 The `find_package` command is better in that case.
 
-Since version 3.24, CMake integrated `find_package` into FetchContent via `FIND_PACKAGE_ARGS`. The NAMES parameter is required when 
-the official package name differs from what you provided as name in `FetchContent_Declare`. `CONFIG` tells it to look for a configuration
-CMake file (eg. `SDL3Config.cmake`).
+Since version 3.24, CMake integrated `find_package` into FetchContent via `FIND_PACKAGE_ARGS`. 
+This way, it first looks if a package is installed in the system. If yes, it uses that. 
+Otherwise, it downloads the repository and builds it from source.
 
-I really like the approach of using FetchContent combined with the parameter to look for a pre-built version of the package.
+After having worked a bit with the FetchContent method, I prefer to use the prebuilt
+files. It takes quite a bit to compile SDL3 and SDL3_Image.
+
+### `FIND_PACKAGE_ARGS` Parameters
+
+The `NAMES` parameter is required when the official package name differs from what you provided as name in `FetchContent_Declare`. 
+`CONFIG` tells it to look for a configuration CMake file (eg. `SDL3Config.cmake`).
+
+`GLOBAL` makes the dependency available inside the whole project. This was added, because it's common to have the dependencies inside a vendor directory; so this flag makes it visible from outside the subdirectory. 
 
 ## CMake resources
 
@@ -251,7 +253,12 @@ talk "Why We Love and Hate CMake" is a good watch for where CMake's rough edges 
 behind [Rho](https://github.com/remarkable/rho-oss), a library that tries to make CMakeLists.txt files
 less painful to write.
 
+I haven't had a look at Rho yet, but really long for writing less CMake boilerplate.
+So this is what I'm eager to try.
+
 - [CMake website](https://cmake.org)
+- [CMake: Using dependencies](https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html)
+- [My personal learn-sdl repo where I experiment with CMake](https://github.com/learosema/learn-sdl)
 - [Martin Fieber: CMake & CPack for cross-platform distributables](https://martin-fieber.de/blog/cmake-cpack-cross-platform-distributables/)
 - [Martin Fieber: Basic C++ setup with dependency management in CMake](https://martin-fieber.de/blog/basic-cpp-setup-with-dependency-management/)
 - [Martin Fieber: CMake Presets](https://martin-fieber.de/blog/cmake-presets/)
