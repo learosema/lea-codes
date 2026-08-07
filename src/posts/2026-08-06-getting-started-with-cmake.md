@@ -161,6 +161,10 @@ find_package(SDL3)
 When the package is not available, CMake stops here.
 You can tell CMake where to look, via the `CMAKE_PREFIX_PATH` environment variable.
 
+On my windows machine, I unpacked all SDL3 release files into `C:\_sdk\sdl3`, `c:\_sdk\sdl3_image`, and so on
+Then, I've set `CMAKE_PREFIX_PATH=C:\_sdk` in my user environment variables. Linux/Mac is a little easier in this
+regard due to the standard unix-like directory structure.
+
 ### git Submodules
 
 ```sh
