@@ -49,7 +49,8 @@ A lot of C/C++ open source projects
 use it, and I think it has become a de-facto standard for open-source libraries.
 
 Also, CMake is a Turing-complete language itself, and it comes with if/then/else, variables, functions and all
-those things. Though, that's not necessarily an advantage. It makes it pretty powerful, but it makes it a rabbit hole and you happen to debug your CMakeLists.txt from time to time.
+those things. Though, that's not necessarily an advantage. It makes it pretty powerful, but it also makes it a 
+rabbit hole and you happen to debug your CMakeLists.txt from time to time.
 
 There are other generators such as Meson, which is simpler and whose slogan is "non-Turing-complete". 
 I haven't tried it yet. CMake even comes with a Meson generator.
