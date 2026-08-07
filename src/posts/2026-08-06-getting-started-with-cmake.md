@@ -40,20 +40,17 @@ Windows and Xcode on macOS, you'd have to hand-maintain three completely differe
 ## CMake
 
 As I said, CMake tries to solve this problem. It doesn't build the project itself, 
-it generates the makefiles for you.
+it generates the makefiles for you. This way, you can make your project work with many
+different compilers.
 
-I use CMake for my own projects because it seems to
-be the one that most C/C++ projects converge on nowadays. 
-
-A lot of C/C++ open source projects
-use it, and I think it has become a de-facto standard for open-source libraries.
+A lot of C/C++ open source projects use it, and I think it has become a de-facto standard for open-source libraries.
 
 Also, CMake is a Turing-complete language itself, and it comes with if/then/else, variables, functions and all
 those things. Though, that's not necessarily an advantage. It makes it pretty powerful, but it also makes it a 
 rabbit hole and you happen to debug your CMakeLists.txt from time to time.
 
 There are other generators such as Meson, which is simpler and whose slogan is "non-Turing-complete". 
-I haven't tried it yet. CMake even comes with a Meson generator.
+But I haven't tried it yet. Fun fact aside: CMake even comes with a Meson generator.
 
 ## CMake HelloWorld
 
